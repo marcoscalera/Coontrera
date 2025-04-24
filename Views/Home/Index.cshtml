@@ -1,0 +1,107 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Início";
+}
+<style>
+    body {
+        font-family: Afacad, sans-serif;
+    }
+
+    .navbar-brand, .nav-link {
+        color: #4A154B !important;
+    }
+
+    .navbar {
+        background-color: #F8EAF6;
+    }
+
+    .hero-section {
+        background: url('logo.svg') no-repeat top center;
+        background-size: contain;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 20px;
+        color: #4A154B;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+        .hero-section h1 {
+            color: #2C003E;
+            font-weight: bold;
+        }
+
+    .btn-primary {
+        background-color: #7E328B;
+        border-color: #7E328B;
+    }
+
+        .btn-primary:hover {
+            background-color: #5E2370;
+            border-color: #5E2370;
+        }
+
+    .services-section {
+        padding: 50px 0;
+        background-color: #FFFFFF;
+    }
+
+        .services-section h2 {
+            color: #2C003E;
+            margin-bottom: 40px;
+        }
+
+        .services-section h3 {
+            color: #7E328B;
+        }
+
+    .cta-section {
+        background-color: #F8EAF6;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+        .cta-section h2 {
+            color: #2C003E;
+        }
+</style>
+<section class="hero-section">
+    <div class="container">
+        <img src="~/images/logo.svg" class="d-block w-100" alt="Imagem 8">
+    </div>
+</section>
+<section class="services-section">
+    <div class="container">
+        <h2 class="text-center">Serviços Oferecidos</h2>
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <h3>Pilates</h3>
+                <p>Descrição breve sobre o serviço de Pilates.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h3>Fisioterapia</h3>
+                <p>Descrição breve sobre o serviço de Fisioterapia.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h3>Quiropraxia</h3>
+                <p>Descrição breve sobre o serviço de Quiropraxia.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h3>Hidroterapia</h3>
+                <p>Descrição breve sobre o serviço de Hidroterapia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section">
+    <div class="container">
+        <h2>Agende uma aula experimental grátis!</h2>
+        <p>Não perca a chance de experimentar nossos serviços.</p>
+        <a href="https://api.whatsapp.com/send?phone=5516994593131" class="btn btn-primary btn-lg">Agendar Agora</a>
+    </div>
+</section>
+
+

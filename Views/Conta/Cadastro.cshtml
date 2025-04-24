@@ -1,0 +1,122 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Cadastro";
+}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var termosLabel = document.querySelector('.form-check-label');
+            termosLabel.setAttribute('title', "Ao aceitar estes Termos de Uso, você concorda e autoriza expressamente que a clínica, na qualidade de controladora dos dados, utilize suas informações pessoais, incluindo o número de telefone fornecido no cadastro, para fins de contato e prestação de serviços, conforme previsto em nossa Política de Privacidade. Ressaltamos que seus dados serão tratados com segurança e confidencialidade, em conformidade com a Lei nº 13.709/2018 (LGPD). Você pode, a qualquer momento, revogar esta autorização ou solicitar mais informações sobre o tratamento dos seus dados através dos canais de atendimento disponibilizados.");
+            new bootstrap.Tooltip(termosLabel);
+        });
+        function mostrarPopup(event) {
+            event.preventDefault();
+            var modal = new bootstrap.Modal(document.getElementById('popupMensagem'));
+            modal.show();
+        }
+    </script>
+<style>
+    body {
+        background-color: #f6eefb;
+        font-family: 'Afacad', sans-serif;
+        overflow: hidden;
+    }
+
+    .container-box {
+        max-width: 900px;
+        background: white;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        background-color: #d1a3ff;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #b07ad7;
+        }
+
+    .form-check-label {
+        color: #5e315b;
+    }
+
+    .tooltip-inner {
+        max-width: 300px;
+        text-align: justify;
+        background-color: #d1a3ff;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .tooltip.show {
+        opacity: 1;
+    }
+
+    .back-link {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-weight: bold;
+        color: #5e315b;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            color: #a04e99;
+        }
+
+    .modal-content {
+        background-color: #f6eefb;
+        color: #5e315b;
+        text-align: center;
+    }
+</style>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="container-box w-75">
+            <h2 class="text-center" style="color: #5e315b;">Cadastre-se</h2>
+            <form onsubmit="mostrarPopup(event)">
+                <div class="mb-3">
+                    <label class="form-label">Nome Completo:</label>
+                    <input type="text" class="form-control" placeholder="Digite seu nome aqui">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Data de Nascimento:</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Endereço:</label>
+                    <input type="text" class="form-control" placeholder="Digite o Endereço">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input type="email" class="form-control" placeholder="Insira um e-mail válido">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Senha:</label>
+                    <input type="password" class="form-control" placeholder="Crie uma senha forte">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="termos">
+                    <label class="form-check-label" for="termos" data-bs-toggle="tooltip" data-bs-placement="top">Aceito os termos de uso</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="popupMensagem" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content p-4">
+                <h4>🎉 Parabéns!</h4>
+                <p>Ao realizar o cadastro, você acaba de ganhar uma aula experimental gratuita! 🎁</p>
+                <p>Nossa equipe entrará em contato com você em breve para confirmar os detalhes. ⏳</p>
+                <p>Em instantes, você será redirecionado(a) para a página inicial. 🌐</p>
+                <p>Agradecemos pela sua confiança e estamos ansiosos para te receber! 😊</p>
+            </div>
+        </div>
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+

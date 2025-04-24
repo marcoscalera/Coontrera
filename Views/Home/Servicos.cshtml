@@ -1,0 +1,120 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Serviços";
+}
+<style>
+    body {
+        background-color: #f8f5fb;
+        color: #5a3d5c;
+    }
+
+    .service-section {
+        padding: 50px 0;
+    }
+
+    .service-title {
+        font-weight: bold;
+    }
+
+    .service-item {
+        margin-bottom: 50px;
+    }
+
+    .service-menu {
+        background-color: #e9d8f4;
+        padding: 15px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+        .service-menu a {
+            color: #5a3d5c;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+            .service-menu a:hover {
+                background-color: #cba6e0;
+                color: white;
+            }
+
+    .service-image {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+    <div class="container text-center py-5">
+        <h2 class="service-title">Conheça nossos serviços!</h2>
+        <div class="service-menu mt-4">
+            <a href="#fisioterapia">Fisioterapia</a>
+            <a href="#pilates">Pilates</a>
+            <a href="#quiropraxia">Quiropraxia</a>
+            <a href="#hidroterapia">Hidroterapia</a>
+            <a href="#liberacao">Liberação Miofascial</a>
+            <a href="#dryneedling">Dry Needling</a>
+        </div>
+    </div>
+
+    <div class="container service-section">
+        <div class="row service-item" id="fisioterapia">
+            <div class="col-md-6">
+                <h3 class="service-title">Fisioterapia</h3>
+                <p>A fisioterapia é uma área da saúde que estuda, previne e trata distúrbios do movimento humano. O objetivo é preservar, manter, desenvolver ou restaurar a integridade dos membros, sistemas ou funções. O fisioterapêuta é um profissional que avalia, diagnostica, previne e trata distúrbios do movimento e funcionalidade do corpo humano. Para isso, utiliza-se técnicas terapêuticas como exercícios de fortalecimento e alongamento para promover a saúde e bem-estar dos pacientes.</p>
+            </div>
+            <div class="col-md-6">
+            <img src="~/images/vetor fisio.svg" class="img-fluid service-image" alt="Fisioterapia">
+            </div>
+        </div>
+        <div class="row service-item" id="pilates">
+            <div class="col-md-6 order-md-2">
+                <h3 class="service-title">Pilates</h3>
+                <p>Pilates é um método de treinamento que pode gerar inúmeros benefícios para o corpo e a mente. Através dele é possível trabalhar a coordenação motora, flexibilidade, mobilidade, equilíbrio e postura. É indicado para todos os públicos, incluindo crianças, idosos, pessoas com patologias e gestantes.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+            <img src="~/images/vetor pilates.svg" class="img-fluid service-image" alt="Pilates">
+            </div>
+        </div>
+        <div class="row service-item" id="quiropraxia">
+            <div class="col-md-6">
+                <h3 class="service-title">Quiropraxia</h3>
+                <p>A quiropraxia clínica é uma prática de saúde que se baseia na manipulação articular da coluna vertebral e do sistema musculoesquelético para tratar e prevenir problemas de saúde: Alívio de dores, Redução do risco de lesões, Melhora da qualidade de vida, Promoção do bem-estar geral. A quiropraxia é uma vertente da medicina alternativa reconhecida pela Organização Mundial da Saúde (OMS) desde 2005.</p>
+            </div>
+            <div class="col-md-6">
+            <img src="~/images/vetor quiropraxia.svg" class="img-fluid service-image" alt="Quiropraxia">
+            </div>
+        </div>
+        <div class="row service-item" id="hidroterapia">
+            <div class="col-md-6 order-md-2">
+                <h3 class="service-title">Hidroterapia</h3>
+                <p>Hidroterapia: trabalha com movimentos e exercícios dentro da piscina, que estimulam a recuperação de lesões, trabalham musculatura e fortalecem o corpo. Também tem fins terapêuticos, pois a piscina é cheia com água morna.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+            <img src="~/images/vetor hidroterapia.svg" class="img-fluid service-image" alt="Hidroterapia">
+            </div>
+        </div>
+        <div class="row service-item" id="liberacao">
+            <div class="col-md-6">
+                <h3 class="service-title">Liberação Miofascial</h3>
+                <p>A liberação miofascial é uma técnica terapêutica que visa aliviar dores musculares e tensões, melhorando a mobilidade e a flexibilidade. É uma terapia manual que consiste em pressionar pontos específicos do corpo, com o objetivo de liberar o tecido fibroso que reveste os músculos, chamado fáscia.</p>
+            </div>
+            <div class="col-md-6">
+            <img src="~/images/vetor liberacao.svg" class="img-fluid service-image" alt="Liberação Miofascial">
+            </div>
+        </div>
+        <div class="row service-item" id="dryneedling">
+            <div class="col-md-6 order-md-2">
+                <h3 class="service-title">Dry Needling</h3>
+                <p>Dry Needling é uma técnica terapêutica que consiste na inserção de uma agulha fina em um ponto gatilho miofascial (OGM) para aliviar dores musculares e melhorar a mobilidade. O Dry Needling é um tratamento rápido, seguro e eficaz para controlar lesões e inflamações musculoesqueléticas.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+            <img src="~/images/vetor dry.svg" class="img-fluid service-image" alt="Dry Needling">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

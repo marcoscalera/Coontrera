@@ -1,0 +1,409 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Coontrera.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Coontrera.a4e64knlom.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\background.jpg",
+      "PackagePath": "staticwebassets\\images\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\desktop.ini",
+      "PackagePath": "staticwebassets\\images\\desktop.ini"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 1.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 1.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 2.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 2.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 3. jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 3. jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 4.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 4.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 5.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 5.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 6.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 6.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 7.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 7.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 8.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 8.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\imagem 9.jpg.jpg",
+      "PackagePath": "staticwebassets\\images\\imagem 9.jpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\insta.svg",
+      "PackagePath": "staticwebassets\\images\\insta.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\instagram.png",
+      "PackagePath": "staticwebassets\\images\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\irmas.jpg",
+      "PackagePath": "staticwebassets\\images\\irmas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\logo (2).svg",
+      "PackagePath": "staticwebassets\\images\\logo (2).svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\images\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\map-icon.svg",
+      "PackagePath": "staticwebassets\\images\\map-icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\oitava.jpg",
+      "PackagePath": "staticwebassets\\images\\oitava.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\phone-icon.svg",
+      "PackagePath": "staticwebassets\\images\\phone-icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\primeira.jpg",
+      "PackagePath": "staticwebassets\\images\\primeira.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\quarta.jpg",
+      "PackagePath": "staticwebassets\\images\\quarta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\quinta.jpg",
+      "PackagePath": "staticwebassets\\images\\quinta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\segunda.jpg",
+      "PackagePath": "staticwebassets\\images\\segunda.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\setima.jpg",
+      "PackagePath": "staticwebassets\\images\\setima.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\sexta.jpg",
+      "PackagePath": "staticwebassets\\images\\sexta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\sua-imagem-de-fundo.jpg",
+      "PackagePath": "staticwebassets\\images\\sua-imagem-de-fundo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\terceira.jpg",
+      "PackagePath": "staticwebassets\\images\\terceira.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\vetor dry.svg",
+      "PackagePath": "staticwebassets\\images\\vetor dry.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\vetor fisio.svg",
+      "PackagePath": "staticwebassets\\images\\vetor fisio.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\vetor hidroterapia.svg",
+      "PackagePath": "staticwebassets\\images\\vetor hidroterapia.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\vetor liberacao.svg",
+      "PackagePath": "staticwebassets\\images\\vetor liberacao.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\vetor pilates.svg",
+      "PackagePath": "staticwebassets\\images\\vetor pilates.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\vetor quiropraxia.svg",
+      "PackagePath": "staticwebassets\\images\\vetor quiropraxia.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\whatsapp-icon.svg",
+      "PackagePath": "staticwebassets\\images\\whatsapp-icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\js\\.keep",
+      "PackagePath": "staticwebassets\\js\\.keep"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Coontrera.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Coontrera.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Coontrera.props",
+      "PackagePath": "build\\Coontrera.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Coontrera.props",
+      "PackagePath": "buildMultiTargeting\\Coontrera.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Coontrera.props",
+      "PackagePath": "buildTransitive\\Coontrera.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
