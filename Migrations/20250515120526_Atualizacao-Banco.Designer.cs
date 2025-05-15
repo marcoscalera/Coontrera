@@ -4,6 +4,7 @@ using Coontrera.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coontrera.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250515120526_Atualizacao-Banco")]
+    partial class AtualizacaoBanco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +52,7 @@ namespace Coontrera.Migrations
 
                     b.HasIndex("IdUsuarioGestor");
 
-                    b.ToTable("tb_agenda");
+                    b.ToTable("Agendas");
                 });
 
             modelBuilder.Entity("AulaTeste", b =>
@@ -76,7 +79,7 @@ namespace Coontrera.Migrations
 
                     b.HasIndex("IdUsuario");
 
-                    b.ToTable("tb_aula_teste");
+                    b.ToTable("AulasTeste");
                 });
 
             modelBuilder.Entity("Feedback", b =>
@@ -101,7 +104,7 @@ namespace Coontrera.Migrations
 
                     b.HasIndex("IdUsuario");
 
-                    b.ToTable("tb_feedback");
+                    b.ToTable("Feedbacks");
                 });
 
             modelBuilder.Entity("Foto", b =>
@@ -118,7 +121,7 @@ namespace Coontrera.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tb_foto");
+                    b.ToTable("Fotos");
                 });
 
             modelBuilder.Entity("Log", b =>
@@ -143,7 +146,7 @@ namespace Coontrera.Migrations
 
                     b.HasIndex("IdUsuario");
 
-                    b.ToTable("tb_log");
+                    b.ToTable("Logs");
                 });
 
             modelBuilder.Entity("NivelUsuario", b =>
@@ -164,7 +167,7 @@ namespace Coontrera.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tb_nivel_usuario");
+                    b.ToTable("NiveisUsuario");
                 });
 
             modelBuilder.Entity("Pagina", b =>
@@ -185,7 +188,7 @@ namespace Coontrera.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tb_pagina");
+                    b.ToTable("Paginas");
                 });
 
             modelBuilder.Entity("Servico", b =>
@@ -211,7 +214,7 @@ namespace Coontrera.Migrations
 
                     b.HasIndex("IdFoto");
 
-                    b.ToTable("tb_servico");
+                    b.ToTable("Servicos");
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -253,7 +256,7 @@ namespace Coontrera.Migrations
 
                     b.HasIndex("IdNivel");
 
-                    b.ToTable("tb_usuario");
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Agenda", b =>

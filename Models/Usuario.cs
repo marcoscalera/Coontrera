@@ -1,35 +1,34 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace Coontrera.Models
+[Table("tb_usuario")]
+public class Usuario
 {
-    [Table("tb_usuario")]
-    public class Usuario
-    {
-        [Key]
-        [Required]
-        public int Id {  get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string Nome { get; set; }
+    [Required, MaxLength(100)]
+    public string Nome { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string Descricao { get; set; }
+    [Required]
+    public string Descricao { get; set; }
 
-        [Required]
-        [MaxLength(11)]
-        [MinLength(10)]
-        public string Telefone { get; set; }
+    [Required, MaxLength(11)]
+    public string Telefone { get; set; }
 
-        [Required]
-        public DateTime DataCadastro { get; set; }
+    public DateTime DataCadastro { get; set; }
 
-        [Required]
-        public bool NivelUsuario { get; set; }
+    [Required]
+    public int IdNivel { get; set; }
+    [ForeignKey("IdNivel")]
+    public NivelUsuario Nivel { get; set; }
 
-        [Required]
-        public bool PrimeiraAulaRealizada { get; set; }
-    }
+    public bool PrimeiraAulaRealizada { get; set; }
+
+    [Required]
+    public string SenhaHash { get; set; }
+
+    public ICollection<Feedback> Feedbacks { get; set; }
+    public ICollection<Log> Logs { get; set; }
+    public ICollection<AulaTeste> AulasTeste { get; set; }
 }
