@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Coontrera.Helpers; // se colocou a classe PasswordHasher lá
 
 [Table("tb_usuario")]
 public class Usuario
@@ -25,8 +26,23 @@ public class Usuario
 
     public bool PrimeiraAulaRealizada { get; set; }
 
-    [Required]
-    public string SenhaHash { get; set; }
+    public string SenhaHash { get; set; }  // vai para o banco
+
+    [NotMapped, Required]
+    public string Senha   // usado só para entrada
+    {
+        set
+        {
+            var hasher = new PasswordHasher();
+            SenhaHash = hasher.HashPassword(value);
+        }
+    }
+
+    public bool VerificarSenha(string senhaDigitada)
+    {
+        var hasher = new PasswordHasher();
+        return hasher.VerifyPassword(SenhaHash, senhaDigitada);
+    }
 
     public ICollection<Feedback> Feedbacks { get; set; }
     public ICollection<Log> Logs { get; set; }

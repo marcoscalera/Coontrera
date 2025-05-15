@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\agenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\agenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\helper\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:helper\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\pagina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\pagina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\nivelusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\nivelusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\foto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\foto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\aulateste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\aulateste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,27 +43,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:26:05.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
               "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Usuario.cs",
               "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:22:42.493Z",
+              "WhenOpened": "2025-05-15T13:55:16.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Helper\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "Helper\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Helper\\PasswordHasher.cs",
+              "RelativeToolTip": "Helper\\PasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T13:54:36.534Z",
               "EditorCaption": ""
             },
             {
@@ -90,100 +74,48 @@
               "RelativeDocumentMoniker": "Models\\Servico.cs",
               "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Servico.cs",
               "RelativeToolTip": "Models\\Servico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:22:20.537Z",
+              "WhenOpened": "2025-05-15T13:54:34.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Pagina.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Pagina.cs",
-              "RelativeDocumentMoniker": "Models\\Pagina.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Pagina.cs",
-              "RelativeToolTip": "Models\\Pagina.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:22:14.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NivelUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\NivelUsuario.cs",
-              "RelativeDocumentMoniker": "Models\\NivelUsuario.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\NivelUsuario.cs",
-              "RelativeToolTip": "Models\\NivelUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:22:06.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Log.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Log.cs",
-              "RelativeDocumentMoniker": "Models\\Log.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Log.cs",
-              "RelativeToolTip": "Models\\Log.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:22:00.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "Foto.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Foto.cs",
               "RelativeDocumentMoniker": "Models\\Foto.cs",
               "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Foto.cs",
               "RelativeToolTip": "Models\\Foto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:21:54.574Z",
+              "WhenOpened": "2025-05-15T13:54:32.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Feedback.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Feedback.cs",
-              "RelativeDocumentMoniker": "Models\\Feedback.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Feedback.cs",
-              "RelativeToolTip": "Models\\Feedback.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Log.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Log.cs",
+              "RelativeDocumentMoniker": "Models\\Log.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Log.cs",
+              "RelativeToolTip": "Models\\Log.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:21:48.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AulaTeste.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\AulaTeste.cs",
-              "RelativeDocumentMoniker": "Models\\AulaTeste.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\AulaTeste.cs",
-              "RelativeToolTip": "Models\\AulaTeste.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:21:40.506Z",
+              "WhenOpened": "2025-05-15T13:54:30.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Agenda.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Agenda.cs",
-              "RelativeDocumentMoniker": "Models\\Agenda.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Agenda.cs",
-              "RelativeToolTip": "Models\\Agenda.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Title": "ContaController.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\ContaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContaController.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\ContaController.cs",
+              "RelativeToolTip": "Controllers\\ContaController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:21:30.738Z",
+              "WhenOpened": "2025-05-15T12:43:07.708Z",
               "EditorCaption": ""
             }
           ]
