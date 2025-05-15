@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Coontrera")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bb7e2d3c401409adaa731cef3b002e39dd901db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e85d443cb69ca11209989713add920405b553d87")]
 [assembly: System.Reflection.AssemblyProductAttribute("Coontrera")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Coontrera")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
