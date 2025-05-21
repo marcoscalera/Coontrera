@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Coontrera.Models; // Modelos como Usuario
-using Coontrera.Data;   // DbContext
+using Coontrera.Data;
+using Coontrera.Helpers;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
 
@@ -9,62 +9,41 @@ namespace Coontrera.Controllers
     public class ContaController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public ContaController(AppDbContext context)
+        public ContaController(AppDbContext context, IPasswordHasher passwordHasher)
         {
             _context = context;
+            _passwordHasher = passwordHasher;
         }
 
-        // GET: /Conta/Login
-        public IActionResult Login()
-        {
-            return View();
-        }
+        // -------- LOGIN E AUTENTICAÇÃO --------
+        public IActionResult Login() => View();
 
-        // POST: /Conta/Login
         [HttpPost]
         public IActionResult Login(string telefone, string senha)
         {
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Telefone == telefone);
 
-            if (usuario != null && usuario.VerificarSenha(senha))
+            if (usuario != null && _passwordHasher.VerifyPassword(usuario.SenhaHash, senha))
             {
-                HttpContext.Session.SetInt32("UsuarioId", usuario.Id); // guarda o id na sessão
-                return RedirectToAction("Index", "Home"); // redireciona para a página principal
+                HttpContext.Session.SetInt32("UsuarioId", usuario.Id);
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.Erro = "Telefone ou senha incorretos.";
             return View();
         }
 
-        // GET: /Conta/Cadastro
-        public IActionResult Cadastro()
+        public IActionResult Logout()
         {
-            return View();
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
         }
 
-        // POST: /Conta/Cadastro
-        [HttpPost]
-        public IActionResult Cadastro(Usuario usuario)
-        {
-            if (ModelState.IsValid)
-            {
-                // Recebe a senha digitada do formulário
-                string senhaDigitada = Request.Form["Senha"];
+        // -------- REDEFINIÇÃO DE SENHA --------
+        public IActionResult NovaSenha() => View();
 
-                usuario.DataCadastro = DateTime.Now;
-                usuario.Senha = senhaDigitada; // Isso aciona o setter e aplica o hash com salt
-
-                _context.Usuarios.Add(usuario);
-                _context.SaveChanges();
-
-                return RedirectToAction("Login");
-            }
-
-            return View(usuario);
-        }
-
-        // POST: /Conta/NovaSenha
         [HttpPost]
         public IActionResult NovaSenha(string telefone, string novaSenha, string confirmarSenha)
         {
@@ -82,11 +61,30 @@ namespace Coontrera.Controllers
                 return View();
             }
 
-            usuario.Senha = novaSenha; // seta o hash da nova senha
+            usuario.SenhaHash = _passwordHasher.HashPassword(novaSenha);
             _context.SaveChanges();
 
             ViewBag.Sucesso = "Senha alterada com sucesso!";
             return View();
+        }
+
+        // -------- CADASTRO (exemplo de criação de usuário) --------
+        [HttpGet]
+        public IActionResult Cadastro() => View();
+
+        [HttpPost]
+        public IActionResult Cadastro(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                usuario.SenhaHash = _passwordHasher.HashPassword(usuario.Senha);
+                usuario.DataCadastro = DateTime.Now;
+
+                _context.Usuarios.Add(usuario);
+                _context.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            return View(usuario);
         }
     }
 }
