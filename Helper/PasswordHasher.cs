@@ -3,7 +3,7 @@ using System;
 
 namespace Coontrera.Helpers
 {
-    public class PasswordHasher
+    public class PasswordHasher : IPasswordHasher
     {
         public string HashPassword(string password)
         {
