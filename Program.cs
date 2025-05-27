@@ -1,15 +1,29 @@
+using Microsoft.OpenApi.Models;
 using Coontrera.Data;
 using Coontrera.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Banco de dados
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// MVC
 builder.Services.AddControllersWithViews();
 
-// Configuração de sessão
+// Swagger
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Coontrera API",
+        Version = "v1",
+        Description = "Documentação da API do projeto Coontrera"
+    });
+});
+
+// Sessão
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
@@ -18,7 +32,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Injeção de dependência para PasswordHasher
+// Injeção de dependência
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 var app = builder.Build();
@@ -34,11 +48,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseSession(); // Ativa a sessão
-
-// app.UseAuthentication(); // Se implementar autenticação real futuramente
-
+app.UseSession();
+// app.UseAuthentication(); // se for implementar no futuro
 app.UseAuthorization();
+
+// Habilita Swagger
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Coontrera API V1");
+});
 
 app.MapControllerRoute(
     name: "default",

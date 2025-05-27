@@ -3,6 +3,7 @@ using Coontrera.Data;
 using Coontrera.Helpers;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using Coontrera.Models;
 
 namespace Coontrera.Controllers
 {
@@ -17,13 +18,18 @@ namespace Coontrera.Controllers
             _passwordHasher = passwordHasher;
         }
 
-        // -------- LOGIN E AUTENTICAÇÃO --------
         public IActionResult Login() => View();
 
         [HttpPost]
         public IActionResult Login(string telefone, string senha)
         {
-            var usuario = _context.Usuarios.FirstOrDefault(u => u.Telefone == telefone);
+            if (string.IsNullOrWhiteSpace(telefone) || string.IsNullOrWhiteSpace(senha))
+            {
+                ViewBag.Erro = "Preencha todos os campos.";
+                return View();
+            }
+
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Telefone == telefone.Trim());
 
             if (usuario != null && _passwordHasher.VerifyPassword(usuario.SenhaHash, senha))
             {
@@ -41,19 +47,24 @@ namespace Coontrera.Controllers
             return RedirectToAction("Login");
         }
 
-        // -------- REDEFINIÇÃO DE SENHA --------
         public IActionResult NovaSenha() => View();
 
         [HttpPost]
         public IActionResult NovaSenha(string telefone, string novaSenha, string confirmarSenha)
         {
+            if (string.IsNullOrWhiteSpace(telefone) || string.IsNullOrWhiteSpace(novaSenha))
+            {
+                ViewBag.Erro = "Preencha todos os campos.";
+                return View();
+            }
+
             if (novaSenha != confirmarSenha)
             {
                 ViewBag.Erro = "As senhas não coincidem.";
                 return View();
             }
 
-            var usuario = _context.Usuarios.FirstOrDefault(u => u.Telefone == telefone);
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Telefone == telefone.Trim());
 
             if (usuario == null)
             {
@@ -68,7 +79,6 @@ namespace Coontrera.Controllers
             return View();
         }
 
-        // -------- CADASTRO (exemplo de criação de usuário) --------
         [HttpGet]
         public IActionResult Cadastro() => View();
 

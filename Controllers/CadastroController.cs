@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Coontrera.Models;
 using Coontrera.Data;
+using Coontrera.Helpers;
 using System;
 
 namespace Coontrera.Controllers
@@ -8,13 +9,13 @@ namespace Coontrera.Controllers
     public class CadastroController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public CadastroController(AppDbContext context)
+        public CadastroController(AppDbContext context, IPasswordHasher passwordHasher)
         {
             _context = context;
+            _passwordHasher = passwordHasher;
         }
-
-        // -------- CADASTRO --------
 
         public IActionResult Cadastro() => View();
 
@@ -23,9 +24,8 @@ namespace Coontrera.Controllers
         {
             if (ModelState.IsValid)
             {
-                string senhaDigitada = Request.Form["Senha"];
                 usuario.DataCadastro = DateTime.Now;
-                usuario.Senha = senhaDigitada;
+                usuario.SenhaHash = _passwordHasher.HashPassword(usuario.Senha);
 
                 _context.Usuarios.Add(usuario);
                 _context.SaveChanges();
