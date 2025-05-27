@@ -91,6 +91,38 @@ namespace Coontrera.Controllers
             });
         }
 
-        // PUT e DELETE podem ser adicionados posteriormente
+        // PUT: api/UsuariosApi/5
+        [HttpPut("{id}")]
+        public IActionResult AtualizarUsuario(int id, [FromBody] UsuarioUpdateDTO dto)
+        {
+            var usuario = _context.Usuarios.Find(id);
+            if (usuario == null)
+                return NotFound();
+
+            usuario.Nome = dto.Nome;
+            usuario.Descricao = dto.Descricao;
+            usuario.Telefone = dto.Telefone;
+            usuario.IdNivel = dto.IdNivel;
+            usuario.PrimeiraAulaRealizada = dto.PrimeiraAulaRealizada;
+
+            _context.Usuarios.Update(usuario);
+            _context.SaveChanges();
+
+            return NoContent(); // 204
+        }
+
+        // DELETE: api/UsuariosApi/5
+        [HttpDelete("{id}")]
+        public IActionResult DeletarUsuario(int id)
+        {
+            var usuario = _context.Usuarios.Find(id);
+            if (usuario == null)
+                return NotFound();
+
+            _context.Usuarios.Remove(usuario);
+            _context.SaveChanges();
+
+            return NoContent(); // 204
+        }
     }
 }
