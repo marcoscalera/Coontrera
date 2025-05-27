@@ -1,17 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("tb_nivel_usuario")]
-public class NivelUsuario
+namespace Coontrera.Models
 {
-    [Key]
-    public int Id { get; set; }
+    [Table("tb_nivel_usuario")]
+    public class NivelUsuario
+    {
+        [Key]
+        public int Id { get; set; }
 
-    [Required]
-    public string Nivel { get; set; }
+        [Required]
+        public string? Nivel { get; set; }
 
-    [Required]
-    public string Descricao { get; set; }
+        [Required]
+        public string? Descricao { get; set; }
 
-    public ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Usuario>? Usuarios { get; set; }
+    }
 }

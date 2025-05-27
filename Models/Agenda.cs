@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Coontrera.Models;
 
 [Table("tb_agenda")]
 public class Agenda

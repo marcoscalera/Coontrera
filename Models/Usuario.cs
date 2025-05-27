@@ -1,37 +1,42 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Coontrera.Helpers;
+using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("tb_usuario")]
-public class Usuario
+namespace Coontrera.Models
 {
-    [Key]
-    public int Id { get; set; }
+    [Table("tb_usuario")]
+    public class Usuario
+    {
+        [Key]
+        public int Id { get; set; }
 
-    [Required, MaxLength(100)]
-    public string Nome { get; set; }
+        [Required, MaxLength(100)]
+        public string? Nome { get; set; }
 
-    [Required]
-    public string Descricao { get; set; }
+        [Required]
+        public string? Descricao { get; set; }
 
-    [Required, MaxLength(11)]
-    public string Telefone { get; set; }
+        [Required, MaxLength(11)]
+        public string? Telefone { get; set; }
 
-    public DateTime DataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
 
-    [Required]
-    public int IdNivel { get; set; }
-    [ForeignKey("IdNivel")]
-    public NivelUsuario Nivel { get; set; }
+        [Required]
+        public int IdNivel { get; set; }
 
-    public bool PrimeiraAulaRealizada { get; set; }
+        [ForeignKey("IdNivel")]
+        public virtual NivelUsuario? Nivel { get; set; }
 
-    public string SenhaHash { get; set; }  // Armazena o hash da senha no banco
+        public bool PrimeiraAulaRealizada { get; set; }
 
-    [NotMapped, Required]
-    public string Senha { get; set; }  // Apenas recebe a senha, sem hashing aqui
+        public string? SenhaHash { get; set; }
 
-    public ICollection<Feedback> Feedbacks { get; set; }
-    public ICollection<Log> Logs { get; set; }
-    public ICollection<AulaTeste> AulasTeste { get; set; }
+        [NotMapped, Required]
+        public string? Senha { get; set; }
+
+        public virtual ICollection<Feedback>? Feedbacks { get; set; }
+        public virtual ICollection<Log>? Logs { get; set; }
+        public virtual ICollection<AulaTeste>? AulasTeste { get; set; }
+    }
 }
