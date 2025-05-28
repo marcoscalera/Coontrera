@@ -21,7 +21,6 @@ namespace Coontrera.Controllers
             _passwordHasher = passwordHasher;
         }
 
-        // GET: api/UsuariosApi
         [HttpGet]
         public IActionResult GetUsuarios()
         {
@@ -33,14 +32,14 @@ namespace Coontrera.Controllers
                     u.Id,
                     u.Nome,
                     u.Telefone,
+                    u.Email,
                     u.DataCadastro,
-                    Nivel = u.Nivel != null ? u.Nivel.Nivel : null
+                    Nivel = u.Nivel?.Nivel
                 });
 
             return Ok(usuarios);
         }
 
-        // GET: api/UsuariosApi/5
         [HttpGet("{id}")]
         public IActionResult GetUsuario(int id)
         {
@@ -52,10 +51,11 @@ namespace Coontrera.Controllers
                     u.Id,
                     u.Nome,
                     u.Telefone,
+                    u.Email,
                     u.DataCadastro,
-                    Nivel = u.Nivel != null ? u.Nivel.Nivel : null
+                    Nivel = u.Nivel.Nivel
                 })
-                .FirstOrDefault();
+                .FirstOrDefault(); 
 
             if (usuario == null)
                 return NotFound();
@@ -63,18 +63,22 @@ namespace Coontrera.Controllers
             return Ok(usuario);
         }
 
-        // POST: api/UsuariosApi
         [HttpPost]
         public IActionResult CriarUsuario([FromBody] UsuarioDTO dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            // verifica duplicidade de telefone ou email
+            if (_context.Usuarios.Any(u => u.Telefone == dto.Telefone || u.Email == dto.Email))
+                return Conflict("Telefone ou e-mail já cadastrado.");
+
             var usuario = new Usuario
             {
                 Nome = dto.Nome,
                 Descricao = dto.Descricao,
                 Telefone = dto.Telefone,
+                Email = dto.Email,
                 IdNivel = dto.IdNivel,
                 DataCadastro = DateTime.Now,
                 SenhaHash = _passwordHasher.HashPassword(dto.Senha)
@@ -87,11 +91,11 @@ namespace Coontrera.Controllers
             {
                 usuario.Id,
                 usuario.Nome,
-                usuario.Telefone
+                usuario.Telefone,
+                usuario.Email
             });
         }
 
-        // PUT: api/UsuariosApi/5
         [HttpPut("{id}")]
         public IActionResult AtualizarUsuario(int id, [FromBody] UsuarioUpdateDTO dto)
         {
@@ -102,6 +106,7 @@ namespace Coontrera.Controllers
             usuario.Nome = dto.Nome;
             usuario.Descricao = dto.Descricao;
             usuario.Telefone = dto.Telefone;
+            usuario.Email = dto.Email;
             usuario.IdNivel = dto.IdNivel;
             usuario.PrimeiraAulaRealizada = dto.PrimeiraAulaRealizada;
 
@@ -111,7 +116,6 @@ namespace Coontrera.Controllers
             return NoContent(); // 204
         }
 
-        // DELETE: api/UsuariosApi/5
         [HttpDelete("{id}")]
         public IActionResult DeletarUsuario(int id)
         {

@@ -5,7 +5,7 @@
 namespace Coontrera.Migrations
 {
     /// <inheritdoc />
-    public partial class AdicaoSenhaHash : Migration
+    public partial class BancoFinalV2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coontrera.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250527135729_AjustesModelosUsuario")]
-    partial class AjustesModelosUsuario
+    [Migration("20250528142001_BancoFinal-V2")]
+    partial class BancoFinalV2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -118,6 +118,11 @@ namespace Coontrera.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<int>("IdNivel")
                         .HasColumnType("int");
 
@@ -130,6 +135,7 @@ namespace Coontrera.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("SenhaHash")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")

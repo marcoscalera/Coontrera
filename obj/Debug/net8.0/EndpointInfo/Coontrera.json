@@ -135,23 +135,38 @@
   "components": {
     "schemas": {
       "UsuarioDTO": {
+        "required": [
+          "email",
+          "idNivel",
+          "nome",
+          "senha",
+          "telefone"
+        ],
         "type": "object",
         "properties": {
           "nome": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
           },
           "descricao": {
             "type": "string",
             "nullable": true
           },
           "telefone": {
+            "minLength": 1,
+            "pattern": "^\\d{10,11}$",
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "senha": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "idNivel": {
             "type": "integer",
@@ -161,19 +176,34 @@
         "additionalProperties": false
       },
       "UsuarioUpdateDTO": {
+        "required": [
+          "descricao",
+          "email",
+          "idNivel",
+          "nome",
+          "telefone"
+        ],
         "type": "object",
         "properties": {
           "nome": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
           },
           "descricao": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "telefone": {
+            "minLength": 1,
+            "pattern": "^\\d{10,11}$",
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "idNivel": {
             "type": "integer",

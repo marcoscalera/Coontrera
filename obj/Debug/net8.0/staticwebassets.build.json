@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YT45yMMH5WSGCyksGbh/9aWcf/Gv6efmufHviKyDLtI=",
+  "Hash": "a1gAfm+iOiNarFl1gCVrweW8orKcQYJ64yTQDMIWDPM=",
   "Source": "Coontrera",
   "BasePath": "_content/Coontrera",
   "Mode": "Default",
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "61n19gt1b8",
-      "Integrity": "Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
+      "Fingerprint": "4whsm6kg95",
+      "Integrity": "lDfm7sYiaU5Px47pi5bcN1I2MLaRjyI5G28u/YLLsOY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
@@ -2302,7 +2302,7 @@
       ]
     },
     {
-      "Route": "favicon.61n19gt1b8.ico",
+      "Route": "favicon.4whsm6kg95.ico",
       "AssetFile": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2312,7 +2312,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5430"
+          "Value": "114110"
         },
         {
           "Name": "Content-Type",
@@ -2320,11 +2320,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+          "Value": "\"lDfm7sYiaU5Px47pi5bcN1I2MLaRjyI5G28u/YLLsOY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Apr 2025 16:38:19 GMT"
+          "Value": "Tue, 27 May 2025 20:14:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2334,7 +2334,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "61n19gt1b8"
+          "Value": "4whsm6kg95"
         },
         {
           "Name": "label",
@@ -2342,7 +2342,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+          "Value": "sha256-lDfm7sYiaU5Px47pi5bcN1I2MLaRjyI5G28u/YLLsOY="
         }
       ]
     },
@@ -2357,7 +2357,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5430"
+          "Value": "114110"
         },
         {
           "Name": "Content-Type",
@@ -2365,11 +2365,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+          "Value": "\"lDfm7sYiaU5Px47pi5bcN1I2MLaRjyI5G28u/YLLsOY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Apr 2025 16:38:19 GMT"
+          "Value": "Tue, 27 May 2025 20:14:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2379,7 +2379,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+          "Value": "sha256-lDfm7sYiaU5Px47pi5bcN1I2MLaRjyI5G28u/YLLsOY="
         }
       ]
     },

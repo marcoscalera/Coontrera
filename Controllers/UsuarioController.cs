@@ -30,19 +30,34 @@ namespace Coontrera.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(Usuario usuario)
+        public IActionResult Editar(int id, [Bind("Nome,Descricao,Telefone,Email,IdNivel,PrimeiraAulaRealizada")] Usuario form)
         {
+            var usuario = _context.Usuarios.Find(id);
+            if (usuario == null)
+                return NotFound();
+
             if (ModelState.IsValid)
             {
+                usuario.Nome = form.Nome;
+                usuario.Descricao = form.Descricao;
+                usuario.Telefone = form.Telefone;
+                usuario.Email = form.Email;
+                usuario.IdNivel = form.IdNivel;
+                usuario.PrimeiraAulaRealizada = form.PrimeiraAulaRealizada;
+
+                // Atualizar senha só se fornecida
                 string novaSenha = Request.Form["Senha"];
-                usuario.SenhaHash = _passwordHasher.HashPassword(novaSenha);
+                if (!string.IsNullOrWhiteSpace(novaSenha))
+                {
+                    usuario.SenhaHash = _passwordHasher.HashPassword(novaSenha);
+                }
 
                 _context.Usuarios.Update(usuario);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(usuario);
+            return View(form);
         }
 
         public IActionResult Deletar(int id)

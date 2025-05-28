@@ -5,7 +5,7 @@
 namespace Coontrera.Migrations
 {
     /// <inheritdoc />
-    public partial class AddRequiredFields : Migration
+    public partial class BancoFinalV3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
