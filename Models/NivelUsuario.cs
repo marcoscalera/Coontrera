@@ -8,14 +8,14 @@ namespace Coontrera.Models
     public class NivelUsuario
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
         [Required]
-        public string? Nivel { get; set; }
+        public string Nivel { get; set; } = string.Empty;
 
         [Required]
-        public string? Descricao { get; set; }
+        public string Descricao { get; set; } = string.Empty;
 
-        public virtual ICollection<Usuario>? Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>(); 
     }
 }

@@ -6,14 +6,14 @@ using Coontrera.Models;
 public class Feedback
 {
     [Key]
-    public int Id { get; set; }
+    public int Id { get; set; } 
 
-    public int IdUsuario { get; set; }
+    public int IdUsuario { get; set; } 
     [ForeignKey("IdUsuario")]
-    public Usuario Usuario { get; set; }
+    public Usuario Usuario { get; set; } 
 
-    public bool Aprovado { get; set; }
+    public bool Aprovado { get; set; } 
 
     [Required]
-    public string Mensagem { get; set; }
+    public string Mensagem { get; set; } = string.Empty;
 }
