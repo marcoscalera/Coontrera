@@ -76,10 +76,9 @@ namespace Coontrera.Controllers
             var usuario = new Usuario
             {
                 Nome = dto.Nome,
-                Descricao = dto.Descricao,
                 Telefone = dto.Telefone,
                 Email = dto.Email,
-                IdNivel = dto.IdNivel,
+                IdNivel = 1,
                 DataCadastro = DateTime.Now,
                 SenhaHash = _passwordHasher.HashPassword(dto.Senha)
             };
@@ -104,7 +103,6 @@ namespace Coontrera.Controllers
                 return NotFound();
 
             usuario.Nome = dto.Nome;
-            usuario.Descricao = dto.Descricao;
             usuario.Telefone = dto.Telefone;
             usuario.Email = dto.Email;
             usuario.IdNivel = dto.IdNivel;

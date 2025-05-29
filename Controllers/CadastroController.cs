@@ -45,7 +45,6 @@ namespace Coontrera.Controllers
             var usuario = new Usuario
             {
                 Nome = dto.Nome,
-                Descricao = dto.Descricao,
                 Telefone = dto.Telefone,
                 Email = dto.Email,
                 SenhaHash = _passwordHasher.HashPassword(dto.Senha),
