@@ -137,7 +137,6 @@
       "UsuarioDTO": {
         "required": [
           "email",
-          "idNivel",
           "nome",
           "senha",
           "telefone"
@@ -148,10 +147,6 @@
             "maxLength": 100,
             "minLength": 1,
             "type": "string"
-          },
-          "descricao": {
-            "type": "string",
-            "nullable": true
           },
           "telefone": {
             "minLength": 1,
@@ -167,10 +162,6 @@
           "senha": {
             "minLength": 1,
             "type": "string"
-          },
-          "idNivel": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false

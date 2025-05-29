@@ -14,9 +14,6 @@ namespace Coontrera.Models
         [Required, MaxLength(100)]
         public string Nome { get; set; } = string.Empty;
 
-        [Required]
-        public string Descricao { get; set; } = string.Empty;
-
         [Required, MaxLength(100), EmailAddress]
         public string Email { get; set; } = string.Empty;
 

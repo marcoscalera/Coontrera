@@ -39,7 +39,6 @@ namespace Coontrera.Controllers
             if (ModelState.IsValid)
             {
                 usuario.Nome = form.Nome;
-                usuario.Descricao = form.Descricao;
                 usuario.Telefone = form.Telefone;
                 usuario.Email = form.Email;
                 usuario.IdNivel = form.IdNivel;

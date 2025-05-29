@@ -7,8 +7,6 @@ namespace Coontrera.Models.DTOs
         [Required(ErrorMessage = "O nome é obrigatório."), MaxLength(100)]
         public string Nome { get; set; } = string.Empty;
 
-        public string Descricao { get; set; } = string.Empty;
-
         [Required(ErrorMessage = "O número de telefone é obrigatório.")]
         [RegularExpression(@"^\d{10,11}$", ErrorMessage = "Telefone deve conter 10 ou 11 dígitos numéricos.")]
         public string Telefone { get; set; } = string.Empty;
@@ -18,8 +16,5 @@ namespace Coontrera.Models.DTOs
 
         [Required(ErrorMessage = "A senha é obrigatória.")]
         public string Senha { get; set; } = string.Empty;
-
-        [Required(ErrorMessage = "O nível do usuário é obrigatório.")]
-        public int IdNivel { get; set; }
     }
 }
