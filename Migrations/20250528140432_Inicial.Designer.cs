@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coontrera.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250515130148_AdicaoSenhaHash")]
-    partial class AdicaoSenhaHash
+    [Migration("20250528140432_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,6 +80,74 @@ namespace Coontrera.Migrations
                     b.HasIndex("IdUsuario");
 
                     b.ToTable("tb_aula_teste");
+                });
+
+            modelBuilder.Entity("Coontrera.Models.NivelUsuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nivel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tb_nivel_usuario");
+                });
+
+            modelBuilder.Entity("Coontrera.Models.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("IdNivel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("PrimeiraAulaRealizada")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SenhaHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdNivel");
+
+                    b.ToTable("tb_usuario");
                 });
 
             modelBuilder.Entity("Feedback", b =>
@@ -149,27 +217,6 @@ namespace Coontrera.Migrations
                     b.ToTable("tb_log");
                 });
 
-            modelBuilder.Entity("NivelUsuario", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("tb_nivel_usuario");
-                });
-
             modelBuilder.Entity("Pagina", b =>
                 {
                     b.Property<int>("Id")
@@ -217,48 +264,6 @@ namespace Coontrera.Migrations
                     b.ToTable("tb_servico");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdNivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("PrimeiraAulaRealizada")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SenhaHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdNivel");
-
-                    b.ToTable("tb_usuario");
-                });
-
             modelBuilder.Entity("Agenda", b =>
                 {
                     b.HasOne("Servico", "Servico")
@@ -267,7 +272,7 @@ namespace Coontrera.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Usuario", "UsuarioGestor")
+                    b.HasOne("Coontrera.Models.Usuario", "UsuarioGestor")
                         .WithMany()
                         .HasForeignKey("IdUsuarioGestor")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -280,7 +285,7 @@ namespace Coontrera.Migrations
 
             modelBuilder.Entity("AulaTeste", b =>
                 {
-                    b.HasOne("Usuario", "Usuario")
+                    b.HasOne("Coontrera.Models.Usuario", "Usuario")
                         .WithMany("AulasTeste")
                         .HasForeignKey("IdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -289,9 +294,20 @@ namespace Coontrera.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("Coontrera.Models.Usuario", b =>
+                {
+                    b.HasOne("Coontrera.Models.NivelUsuario", "Nivel")
+                        .WithMany("Usuarios")
+                        .HasForeignKey("IdNivel")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Nivel");
+                });
+
             modelBuilder.Entity("Feedback", b =>
                 {
-                    b.HasOne("Usuario", "Usuario")
+                    b.HasOne("Coontrera.Models.Usuario", "Usuario")
                         .WithMany("Feedbacks")
                         .HasForeignKey("IdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -302,7 +318,7 @@ namespace Coontrera.Migrations
 
             modelBuilder.Entity("Log", b =>
                 {
-                    b.HasOne("Usuario", "Usuario")
+                    b.HasOne("Coontrera.Models.Usuario", "Usuario")
                         .WithMany("Logs")
                         .HasForeignKey("IdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -322,15 +338,18 @@ namespace Coontrera.Migrations
                     b.Navigation("Foto");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
+            modelBuilder.Entity("Coontrera.Models.NivelUsuario", b =>
                 {
-                    b.HasOne("NivelUsuario", "Nivel")
-                        .WithMany("Usuarios")
-                        .HasForeignKey("IdNivel")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Usuarios");
+                });
 
-                    b.Navigation("Nivel");
+            modelBuilder.Entity("Coontrera.Models.Usuario", b =>
+                {
+                    b.Navigation("AulasTeste");
+
+                    b.Navigation("Feedbacks");
+
+                    b.Navigation("Logs");
                 });
 
             modelBuilder.Entity("Foto", b =>
@@ -338,23 +357,9 @@ namespace Coontrera.Migrations
                     b.Navigation("Servicos");
                 });
 
-            modelBuilder.Entity("NivelUsuario", b =>
-                {
-                    b.Navigation("Usuarios");
-                });
-
             modelBuilder.Entity("Servico", b =>
                 {
                     b.Navigation("Agendas");
-                });
-
-            modelBuilder.Entity("Usuario", b =>
-                {
-                    b.Navigation("AulasTeste");
-
-                    b.Navigation("Feedbacks");
-
-                    b.Navigation("Logs");
                 });
 #pragma warning restore 612, 618
         }

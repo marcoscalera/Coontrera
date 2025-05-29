@@ -5,11 +5,11 @@ using System.ComponentModel.DataAnnotations;
 public class Pagina
 {
     [Key]
-    public int Id { get; set; }
+    public int Id { get; set; } 
 
     [Required]
-    public string Titulo { get; set; }
+    public string Titulo { get; set; } = string.Empty;
 
     [Required]
-    public string Conteudo { get; set; }
+    public string Conteudo { get; set; } = string.Empty;
 }

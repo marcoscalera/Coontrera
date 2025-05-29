@@ -1,1 +1,81 @@
-[]
+[
+  {
+    "ContainingType": "Coontrera.Controllers.UsuariosApiController",
+    "Method": "GetUsuarios",
+    "RelativePath": "api/UsuariosApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coontrera.Controllers.UsuariosApiController",
+    "Method": "CriarUsuario",
+    "RelativePath": "api/UsuariosApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Coontrera.Models.DTOs.UsuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coontrera.Controllers.UsuariosApiController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/UsuariosApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coontrera.Controllers.UsuariosApiController",
+    "Method": "AtualizarUsuario",
+    "RelativePath": "api/UsuariosApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Coontrera.Models.DTOs.UsuarioUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Coontrera.Controllers.UsuariosApiController",
+    "Method": "DeletarUsuario",
+    "RelativePath": "api/UsuariosApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
