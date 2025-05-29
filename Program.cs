@@ -5,34 +5,32 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Banco de dados
+// Configuração do banco de dados usando SQL Server
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// MVC
+// Configuração do MVC e Swagger para documentação da API
 builder.Services.AddControllersWithViews();
-
-// Swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Coontrera API",
         Version = "v1",
-        Description = "Documenta��o da API do projeto Coontrera"
+        Description = "Documentação da API do projeto Coontrera"
     });
 });
 
-// Sess�o
+// Configuração da sessão para autenticação
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Tempo limite da sessão
+    options.Cookie.HttpOnly = true;                 // Cookie acessível apenas via HTTP
+    options.Cookie.IsEssential = true;              // Cookie essencial para o funcionamento
 });
 
-// Inje��o de depend�ncia
+// Injeção de dependência
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 var app = builder.Build();
