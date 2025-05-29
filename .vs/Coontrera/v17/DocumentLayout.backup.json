@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\usuariosapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\usuariosapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\nivelusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\nivelusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\pagina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\pagina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\cadastrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\cadastrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\dto\\usuarioupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\dto\\usuarioupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,36 +39,12 @@
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\nivelusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\nivelusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\usuariosapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\usuariosapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\controllers\\cadastrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|solutionrelative:controllers\\cadastrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1E406CF-A770-4B2E-A806-D6D3355C6A41}|Coontrera.csproj|c:\\users\\marcos paulo calera\\source\\repos\\coontrera\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,33 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioUpdateDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioUpdateDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioUpdateDTO.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioUpdateDTO.cs",
-              "RelativeToolTip": "Models\\DTO\\UsuarioUpdateDTO.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:39:49.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioDTO.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioDTO.cs",
-              "RelativeToolTip": "Models\\DTO\\UsuarioDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:39:34.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Servico.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Servico.cs",
               "RelativeDocumentMoniker": "Models\\Servico.cs",
@@ -112,51 +90,50 @@
               "RelativeToolTip": "Models\\Servico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:39:22.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:39:22.287Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
               "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Usuario.cs",
               "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA0wA4AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T15:39:14.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "UsuariosApiController.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\UsuariosApiController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosApiController.cs",
               "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\UsuariosApiController.cs",
               "RelativeToolTip": "Controllers\\UsuariosApiController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwGkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAA2wHIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T15:38:36.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwCkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T15:38:19.366Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -164,12 +141,11 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:38:18.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:38:18.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "NivelUsuario.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\NivelUsuario.cs",
               "RelativeDocumentMoniker": "Models\\NivelUsuario.cs",
@@ -177,12 +153,48 @@
               "RelativeToolTip": "Models\\NivelUsuario.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAADwvxAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:58.916Z",
+              "WhenOpened": "2025-05-29T15:37:58.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContaController.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\ContaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContaController.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\ContaController.cs",
+              "RelativeToolTip": "Controllers\\ContaController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAUwAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T15:37:32.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\UsuarioDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T15:39:34.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pagina.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Pagina.cs",
+              "RelativeDocumentMoniker": "Models\\Pagina.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\Pagina.cs",
+              "RelativeToolTip": "Models\\Pagina.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:37:11.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CadastroController.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\CadastroController.cs",
               "RelativeDocumentMoniker": "Controllers\\CadastroController.cs",
@@ -190,12 +202,23 @@
               "RelativeToolTip": "Controllers\\CadastroController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAwwBUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:50.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:37:50.261Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
+              "Title": "UsuarioUpdateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioUpdateDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioUpdateDTO.cs",
+              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Models\\DTO\\UsuarioUpdateDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\UsuarioUpdateDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T15:39:49.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
@@ -203,12 +226,11 @@
               "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
               "ViewState": "AgIAAFkAAAAAAAAAAAAAAHIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:48.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:37:48.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "20250528142550_BancoFinal-V3.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Migrations\\20250528142550_BancoFinal-V3.Designer.cs",
               "RelativeDocumentMoniker": "Migrations\\20250528142550_BancoFinal-V3.Designer.cs",
@@ -216,25 +238,11 @@
               "RelativeToolTip": "Migrations\\20250528142550_BancoFinal-V3.Designer.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAAAHUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:46.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:37:46.752Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ContaController.cs",
-              "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\ContaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ContaController.cs",
-              "ToolTip": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Controllers\\ContaController.cs",
-              "RelativeToolTip": "Controllers\\ContaController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:32.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "20250528142001_BancoFinal-V2.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Migrations\\20250528142001_BancoFinal-V2.Designer.cs",
               "RelativeDocumentMoniker": "Migrations\\20250528142001_BancoFinal-V2.Designer.cs",
@@ -242,12 +250,11 @@
               "RelativeToolTip": "Migrations\\20250528142001_BancoFinal-V2.Designer.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAAAHQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:44.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:37:44.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "20250528140432_Inicial.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Migrations\\20250528140432_Inicial.Designer.cs",
               "RelativeDocumentMoniker": "Migrations\\20250528140432_Inicial.Designer.cs",
@@ -255,12 +262,11 @@
               "RelativeToolTip": "Migrations\\20250528140432_Inicial.Designer.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAAAHQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:39.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:37:39.921Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "20250528140432_Inicial.cs",
               "DocumentMoniker": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\Migrations\\20250528140432_Inicial.cs",
               "RelativeDocumentMoniker": "Migrations\\20250528140432_Inicial.cs",
@@ -268,8 +274,7 @@
               "RelativeToolTip": "Migrations\\20250528140432_Inicial.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAqwFIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T15:37:35.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T15:37:35.6Z"
             }
           ]
         }

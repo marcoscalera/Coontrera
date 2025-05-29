@@ -15,6 +15,7 @@ namespace Coontrera.Controllers
         private readonly AppDbContext _context;
         private readonly IPasswordHasher _passwordHasher;
 
+        // Construtor com injeção de dependência
         public UsuariosApiController(AppDbContext context, IPasswordHasher passwordHasher)
         {
             _context = context;
@@ -24,6 +25,7 @@ namespace Coontrera.Controllers
         [HttpGet]
         public IActionResult GetUsuarios()
         {
+            // Retorna lista de usuários com seus níveis
             var usuarios = _context.Usuarios
                 .Include(u => u.Nivel)
                 .ToList()
@@ -66,10 +68,11 @@ namespace Coontrera.Controllers
         [HttpPost]
         public IActionResult CriarUsuario([FromBody] UsuarioDTO dto)
         {
+            // Validação e criação de novo usuário
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            // verifica duplicidade de telefone ou email
+            // Verifica duplicidade de telefone ou email
             if (_context.Usuarios.Any(u => u.Telefone == dto.Telefone || u.Email == dto.Email))
                 return Conflict("Telefone ou e-mail já cadastrado.");
 
@@ -78,7 +81,7 @@ namespace Coontrera.Controllers
                 Nome = dto.Nome,
                 Telefone = dto.Telefone,
                 Email = dto.Email,
-                IdNivel = 1,
+                IdNivel = 1, // Nível 1 (Estudante) por padrão
                 DataCadastro = DateTime.Now,
                 SenhaHash = _passwordHasher.HashPassword(dto.Senha)
             };

@@ -11,24 +11,21 @@ namespace Coontrera.Controllers
         private readonly AppDbContext _context;
         private readonly IPasswordHasher _passwordHasher;
 
+        // Construtor com injeção de dependência
         public UsuarioController(AppDbContext context, IPasswordHasher passwordHasher)
         {
             _context = context;
             _passwordHasher = passwordHasher;
         }
 
+        // Ação para listar usuários
         public IActionResult Index()
         {
             var usuarios = _context.Usuarios.ToList();
             return View(usuarios);
         }
 
-        public IActionResult Editar(int id)
-        {
-            var usuario = _context.Usuarios.Find(id);
-            return View(usuario);
-        }
-
+        // Ação para editar usuário com tratamento de senha
         [HttpPost]
         public IActionResult Editar(int id, [Bind("Nome,Descricao,Telefone,Email,IdNivel,PrimeiraAulaRealizada")] Usuario form)
         {
@@ -38,13 +35,14 @@ namespace Coontrera.Controllers
 
             if (ModelState.IsValid)
             {
+                // Atualiza os dados do usuário
                 usuario.Nome = form.Nome;
                 usuario.Telefone = form.Telefone;
                 usuario.Email = form.Email;
                 usuario.IdNivel = form.IdNivel;
                 usuario.PrimeiraAulaRealizada = form.PrimeiraAulaRealizada;
 
-                // Atualizar senha só se fornecida
+                // Atualiza a senha apenas se uma nova for fornecida
                 string novaSenha = Request.Form["Senha"];
                 if (!string.IsNullOrWhiteSpace(novaSenha))
                 {
