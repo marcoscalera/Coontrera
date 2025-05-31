@@ -43,11 +43,11 @@ namespace Coontrera.Controllers
                 usuario.PrimeiraAulaRealizada = form.PrimeiraAulaRealizada;
 
                 // Atualiza a senha apenas se uma nova for fornecida
-                string novaSenha = Request.Form["Senha"];
-                if (!string.IsNullOrWhiteSpace(novaSenha))
-                {
-                    usuario.SenhaHash = _passwordHasher.HashPassword(novaSenha);
-                }
+                // string novaSenha = Request.Form["Senha"];
+                // if (!string.IsNullOrWhiteSpace(novaSenha))
+                // {
+                //     usuario.SenhaHash = _passwordHasher.HashPassword(novaSenha);
+                // } depois que eu faço a validação do formulario no front eu faço isso e descomento
 
                 _context.Usuarios.Update(usuario);
                 _context.SaveChanges();
@@ -67,6 +67,9 @@ namespace Coontrera.Controllers
         public IActionResult ConfirmarDeletar(int id)
         {
             var usuario = _context.Usuarios.Find(id);
+            if (usuario == null)
+                return NotFound();
+
             _context.Usuarios.Remove(usuario);
             _context.SaveChanges();
             return RedirectToAction("Index");

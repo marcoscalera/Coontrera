@@ -11,7 +11,7 @@ public class Agenda
     public int IdServico { get; set; }
 
     [ForeignKey("IdServico")]
-    public Servico Servico { get; set; }
+    public Servico? Servico { get; set; }
 
     // se for um dia da semana mesmo, o ideal seria trocar para enum
     public DateTime DiaSemana { get; set; }
@@ -22,5 +22,5 @@ public class Agenda
     public int IdUsuarioGestor { get; set; }
 
     [ForeignKey("IdUsuarioGestor")]
-    public Usuario UsuarioGestor { get; set; }
+    public Usuario? UsuarioGestor { get; set; }
 }
