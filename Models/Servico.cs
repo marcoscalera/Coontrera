@@ -17,7 +17,7 @@ public class Servico
     public int IdFoto { get; set; }
 
     [ForeignKey("IdFoto")]
-    public Foto Foto { get; set; }
+    public Foto? Foto { get; set; }
 
     public ICollection<Agenda> Agendas { get; set; } = new List<Agenda>();
 }

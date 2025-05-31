@@ -5,27 +5,29 @@ using Coontrera.Models;
 using Coontrera.Models.DTOs;
 using Coontrera.Helpers;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Coontrera.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UsuariosApiController : ControllerBase
     {
         private readonly AppDbContext _context;
         private readonly IPasswordHasher _passwordHasher;
 
-        // Construtor com injeção de dependência
         public UsuariosApiController(AppDbContext context, IPasswordHasher passwordHasher)
         {
             _context = context;
             _passwordHasher = passwordHasher;
         }
 
+        [Authorize(Roles = "3")]
         [HttpGet]
         public IActionResult GetUsuarios()
         {
-            // Retorna lista de usuários com seus níveis
             var usuarios = _context.Usuarios
                 .Include(u => u.Nivel)
                 .ToList()
@@ -36,7 +38,7 @@ namespace Coontrera.Controllers
                     u.Telefone,
                     u.Email,
                     u.DataCadastro,
-                    Nivel = u.Nivel?.Nivel
+                    Nivel = u.Nivel != null ? u.Nivel.Nivel : null
                 });
 
             return Ok(usuarios);
@@ -45,6 +47,12 @@ namespace Coontrera.Controllers
         [HttpGet("{id}")]
         public IActionResult GetUsuario(int id)
         {
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+            var userNivel = int.Parse(User.FindFirst("role")?.Value ?? "0");
+
+            if (userNivel != 3 && userId != id)
+                return Forbid("Você só pode ver seus próprios dados.");
+
             var usuario = _context.Usuarios
                 .Include(u => u.Nivel)
                 .Where(u => u.Id == id)
@@ -55,9 +63,9 @@ namespace Coontrera.Controllers
                     u.Telefone,
                     u.Email,
                     u.DataCadastro,
-                    Nivel = u.Nivel.Nivel
+                    Nivel = u.Nivel != null ? u.Nivel.Nivel : null
                 })
-                .FirstOrDefault(); 
+                .FirstOrDefault();
 
             if (usuario == null)
                 return NotFound();
@@ -65,14 +73,13 @@ namespace Coontrera.Controllers
             return Ok(usuario);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult CriarUsuario([FromBody] UsuarioDTO dto)
         {
-            // Validação e criação de novo usuário
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            // Verifica duplicidade de telefone ou email
             if (_context.Usuarios.Any(u => u.Telefone == dto.Telefone || u.Email == dto.Email))
                 return Conflict("Telefone ou e-mail já cadastrado.");
 
@@ -81,7 +88,7 @@ namespace Coontrera.Controllers
                 Nome = dto.Nome,
                 Telefone = dto.Telefone,
                 Email = dto.Email,
-                IdNivel = 1, // Nível 1 (Estudante) por padrão
+                IdNivel = 1,
                 DataCadastro = DateTime.Now,
                 SenhaHash = _passwordHasher.HashPassword(dto.Senha)
             };
@@ -101,22 +108,35 @@ namespace Coontrera.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizarUsuario(int id, [FromBody] UsuarioUpdateDTO dto)
         {
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+            var userNivel = int.Parse(User.FindFirst("role")?.Value ?? "0");
+
+            if (userNivel == 1 && userId != id)
+                return Forbid("Você só pode editar seus próprios dados.");
+
             var usuario = _context.Usuarios.Find(id);
             if (usuario == null)
                 return NotFound();
 
-            usuario.Nome = dto.Nome;
-            usuario.Telefone = dto.Telefone;
-            usuario.Email = dto.Email;
-            usuario.IdNivel = dto.IdNivel;
-            usuario.PrimeiraAulaRealizada = dto.PrimeiraAulaRealizada;
+            if (userNivel == 1)
+            {
+                usuario.Telefone = dto.Telefone;
+                usuario.Email = dto.Email;
+            }
+            else if (userNivel == 3)
+            {
+                usuario.Nome = dto.Nome;
+                usuario.Telefone = dto.Telefone;
+                usuario.Email = dto.Email;
+                usuario.IdNivel = dto.IdNivel;
+                usuario.PrimeiraAulaRealizada = dto.PrimeiraAulaRealizada;
+            }
 
-            _context.Usuarios.Update(usuario);
             _context.SaveChanges();
-
-            return NoContent(); // 204
+            return NoContent();
         }
 
+        [Authorize(Roles = "3")]
         [HttpDelete("{id}")]
         public IActionResult DeletarUsuario(int id)
         {
@@ -127,7 +147,7 @@ namespace Coontrera.Controllers
             _context.Usuarios.Remove(usuario);
             _context.SaveChanges();
 
-            return NoContent(); // 204
+            return NoContent();
         }
     }
 }

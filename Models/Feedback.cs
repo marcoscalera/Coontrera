@@ -10,7 +10,7 @@ public class Feedback
 
     public int IdUsuario { get; set; } 
     [ForeignKey("IdUsuario")]
-    public Usuario Usuario { get; set; } 
+    public Usuario? Usuario { get; set; } 
 
     public bool Aprovado { get; set; } 
 

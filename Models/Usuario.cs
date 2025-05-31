@@ -30,7 +30,7 @@ namespace Coontrera.Models
         public int IdNivel { get; set; }
 
         [ForeignKey("IdNivel")]
-        public virtual NivelUsuario Nivel { get; set; }
+        public virtual NivelUsuario? Nivel { get; set; }
 
         public bool PrimeiraAulaRealizada { get; set; }
 
