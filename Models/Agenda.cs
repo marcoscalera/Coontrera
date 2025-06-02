@@ -13,7 +13,6 @@ public class Agenda
     [ForeignKey("IdServico")]
     public Servico? Servico { get; set; }
 
-    // se for um dia da semana mesmo, o ideal seria trocar para enum
     public DateTime DiaSemana { get; set; }
 
     [Required]

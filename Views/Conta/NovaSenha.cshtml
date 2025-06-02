@@ -1,123 +1,147 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Nova Senha";
+    ViewData["Title"] = "Redefinir Senha";
+    bool etapaSolicitar = ViewBag.EtapaRedefinicao == null || ViewBag.EtapaRedefinicao == 1;
+    bool etapaRedefinir = ViewBag.EtapaRedefinicao == 2;
 }
 
 @section Styles {
     <style>
-        body {
-            background-color: #f6eefb; /* */
-            font-family: 'Afacad', sans-serif; /* */
+        .password-reset-page-container {
+            min-height: calc(100vh - 160px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
         }
-        .container-box {
-            max-width: 450px; /* */
-            background: white; /* */
-            padding: 40px; /* */
-            border-radius: 10px; /* */
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-            margin-top: 50px;
+        .password-reset-card {
+            background-color: var(--white);
+            padding: 40px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(122, 79, 155, 0.12);
+            width: 100%;
+            max-width: 480px;
         }
-        .message-box { /* Estilo da mensagem de código enviado */
-            /* display: none; Controlado por JS */
-            background-color: #e9d8f4; /* Tom mais suave de roxo */
-            color: #5e315b; /* */
-            padding: 15px; /* */
-            border-radius: 5px; /* */
-            text-align: center; /* */
-            margin-top: 20px; /* */
+        .password-reset-card .logo-container {
+            text-align: center;
+            margin-bottom: 25px;
         }
-        .timer {
-            font-weight: bold; /* */
+        .password-reset-card .logo-container img {
+            max-height: 70px;
+        }
+        .password-reset-card h2.form-title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        .password-reset-card p.form-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
         }
         .form-label {
-            color: #5e315b;
+            color: var(--text-dark);
             font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .form-control {
+            border-radius: 8px;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border: 1px solid var(--light-gray);
+        }
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.15);
         }
     </style>
 }
 
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="container-box w-100">
-        <div class="text-center mb-4">
-             <img src="~/images/logo-coontrera-sm.png" alt="Logo Coontrera" style="max-height: 80px;"/>
-            <h3 class="mt-2" style="color: #5e315b;">Redefinir Senha</h3>
-            <p class="text-muted">Informe seu telefone e crie uma nova senha.</p>
+<div class="password-reset-page-container">
+    <div class="password-reset-card" data-aos="fade-up">
+        <div class="logo-container">
+             <a asp-controller="Home" asp-action="Index">
+                <img src="~/images/logo.svg" alt="Coontrera Logo">
+            </a>
         </div>
+
+        <h2 class="form-title">@ViewData["Title"]</h2>
+
+        @if (etapaSolicitar)
+        {
+            <p class="form-subtitle">Informe seu e-mail e telefone cadastrados para iniciar o processo de redefinição de senha.</p>
+        }
+        else if (etapaRedefinir)
+        {
+            <p class="form-subtitle">Usuário validado! Agora, crie sua nova senha.</p>
+        }
 
         @if (!string.IsNullOrEmpty(ViewBag.Erro))
         {
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                @ViewBag.Erro
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <div>@ViewBag.Erro</div>
             </div>
         }
         @if (!string.IsNullOrEmpty(ViewBag.Sucesso))
         {
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                @ViewBag.Sucesso
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                <div class="mt-2">
-                     <a asp-controller="Conta" asp-action="Login" class="btn btn-sm btn-outline-success">Ir para Login</a>
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+                <i class="fas fa-check-circle me-2"></i>
+                <div>@ViewBag.Sucesso</div>
+                <div class="mt-2 ms-auto">
+                     <a asp-controller="Conta" asp-action="Login" class="btn btn-sm btn-success">Ir para Login</a>
                 </div>
             </div>
         }
 
-        <form asp-controller="Conta" asp-action="NovaSenha" method="post">
-            <div class="mb-3 text-start">
-                <label for="telefone" class="form-label">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Telefone cadastrado" required>
-            </div>
-            <div class="mb-3 text-start">
-                <label for="novaSenha" class="form-label">Nova Senha:</label>
-                <input type="password" id="novaSenha" name="novaSenha" class="form-control" placeholder="Digite a nova senha" required>
-            </div>
-            <div class="mb-3 text-start">
-                <label for="confirmarSenha" class="form-label">Confirmar Nova Senha:</label>
-                <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme a nova senha" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 py-2">Alterar Senha</button>
-        </form>
+        @if (etapaSolicitar)
+        {
+            <form asp-controller="Conta" asp-action="SolicitarRedefinicaoSenha" method="post" class="mt-4">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail cadastrado" required value="@ViewBag.Email">
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Seu telefone cadastrado" required value="@ViewBag.Telefone">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Verificar Dados</button>
+            </form>
+        }
+        else if (etapaRedefinir)
+        {
+            <form asp-controller="Conta" asp-action="NovaSenha" method="post" class="mt-4">
+                <input type="hidden" name="telefone" value="@ViewBag.TelefoneValidado" />
+                <div class="mb-3">
+                    <label for="novaSenha" class="form-label">Nova Senha</label>
+                    <input type="password" id="novaSenha" name="novaSenha" class="form-control" placeholder="Digite a nova senha" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmarSenha" class="form-label">Confirmar Nova Senha</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme a nova senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Alterar Senha</button>
+            </form>
+        }
         
-        <div class="text-center mt-3">
-             <a asp-controller="Conta" asp-action="Login" class="text-link" style="color: #5e315b;">Voltar para o Login</a>
+        <div class="text-center mt-4">
+             <a asp-controller="Conta" asp-action="Login" style="color: var(--primary-color); font-weight: 500; font-size: 0.9rem;">Voltar para o Login</a>
         </div>
-
-        @*
-        <div id="mensagemCodigo" class="message-box" style="display:none;">
-            <p>Um código de verificação foi enviado para o seu e-mail.</p>
-            <p>Por favor, verifique a caixa de entrada e, se necessário, a pasta de Spam ou Lixo Eletrônico.</p>
-            <p>Código expira em <span id="timer" class="timer">2:00</span></p>
-            <input type="text" class="form-control mt-2" placeholder="Digite o código recebido">
-        </div>
-        *@
     </div>
 </div>
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // A lógica de enviarCodigo e iniciarContador seria para uma funcionalidade de token por email,
-        // que não está implementada no backend `ContaController` fornecido para `NovaSenha`.
-        // A action atual `NovaSenha` redefine a senha diretamente.
-
-        // function enviarCodigo(event) {
-        //     event.preventDefault();
-        //     document.getElementById('mensagemCodigo').style.display = 'block';
-        //     iniciarContador();
-        // }
-        // function iniciarContador() {
-        //     let tempo = 120;
-        //     const timerDisplay = document.getElementById('timer');
-        //     const intervalo = setInterval(() => {
-        //         let minutos = Math.floor(tempo / 60);
-        //         let segundos = tempo % 60;
-        //         timerDisplay.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
-        //         if (tempo === 0) {
-        //             clearInterval(intervalo);
-        //             timerDisplay.textContent = "Código expirado";
-        //         }
-        //         tempo--;
-        //     }, 1000);
-        // }
+        AOS.init({
+            duration: 600,
+            once: true
+        });
     </script>
 }
