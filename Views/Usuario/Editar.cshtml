@@ -1,0 +1,63 @@
+@model Coontrera.Models.Usuario
+@{
+    ViewData["Title"] = "Editar Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Editar Usuário: @Model.Nome</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form asp-action="Editar" asp-route-id="@Model.Id" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="DataCadastro" /> <input type="hidden" asp-for="SenhaHash" /> <div class="mb-3">
+                    <label asp-for="Nome" class="form-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Telefone" class="form-label"></label>
+                    <input asp-for="Telefone" type="tel" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IdNivel" class="form-label">Nível de Usuário</label>
+                    <select asp-for="IdNivel" class="form-select" asp-items="ViewBag.NiveisUsuario">
+                        <option value="">-- Selecione um Nível --</option>
+                    </select>
+                    <span asp-validation-for="IdNivel" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="PrimeiraAulaRealizada" class="form-check-input" />
+                    <label asp-for="PrimeiraAulaRealizada" class="form-check-label"></label>
+                </div>
+
+                @* A atualização de senha está comentada no seu controller
+                   Se for habilitada, um campo para nova senha poderia ser adicionado aqui.
+                <div class="mb-3">
+                    <label for="NovaSenha" class="form-label">Nova Senha (deixe em branco para não alterar)</label>
+                    <input type="password" name="Senha" id="NovaSenha" class="form-control" />
+                </div>
+                *@
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

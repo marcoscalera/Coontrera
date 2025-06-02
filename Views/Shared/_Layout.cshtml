@@ -6,101 +6,239 @@
     <title>@ViewData["Title"] - Coontrera</title>
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
     <style>
+        :root {
+            --primary-color: #7A4F9B;
+            --secondary-color: #A076C2; 
+            --accent-color: #C7A2E4;
+            --text-dark: #311B40;
+            --text-light: #6D5A7C; 
+            --bg-light: #FBF9FF; 
+            --white: #FFFFFF;
+            --light-gray: #f0e8f7; 
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+
+            --font-primary: 'Poppins', sans-serif;
+            --font-headings: 'Playfair Display', serif; 
+        }
+
         body {
-            font-family: Afacad, sans-serif;
+            font-family: var(--font-primary);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding-top: 80px; 
+            line-height: 1.7;
         }
 
-        .navbar-brand, .nav-link {
-            color: #4A154B !important;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-headings); 
+            color: var(--primary-color);
+            font-weight: 600; 
+        }
+        h1.display-1, h1.display-2, h1.display-3 { 
+             font-family: var(--font-headings);
+             color: var(--primary-color);
         }
 
-        .navbar {
-            background-color: #F8EAF6;
+
+        .navbar-custom {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            padding: 1rem 0;
+            transition: background-color 0.3s ease;
         }
 
-        .hero-section {
-            background: url('/logo.svg') no-repeat top center;
-            background-size: contain;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            padding-bottom: 20px;
-            color: #4A154B;
-            padding: 100px 0;
-            text-align: center;
+        .navbar-custom .navbar-brand {
+            font-family: var(--font-headings);
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
         }
 
-            .hero-section h1 {
-                color: #2C003E;
-                font-weight: bold;
-            }
+        .navbar-custom .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-left: 15px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .navbar-custom .nav-link::after { 
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover::after,
+        .navbar-custom .nav-link.active::after {
+            width: 70%;
+        }
+
+
+        .btn {
+            border-radius: 8px; 
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: none;
+        }
+        .btn:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
 
         .btn-primary {
-            background-color: #7E328B;
-            border-color: #7E328B;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background-color: darken(var(--primary-color), 10%);
+            color: var(--white);
         }
 
-            .btn-primary:hover {
-                background-color: #5E2370;
-                border-color: #5E2370;
-            }
-
-        .services-section {
-            padding: 50px 0;
-            background-color: #FFFFFF;
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background-color: transparent;
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .btn-light-accent { 
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .btn-light-accent:hover {
+            background-color: darken(var(--accent-color), 5%);
+            color: var(--primary-color);
         }
 
-            .services-section h2 {
-                color: #2C003E;
-                margin-bottom: 40px;
-            }
 
-            .services-section h3 {
-                color: #7E328B;
-            }
-
-        .cta-section {
-            background-color: #F8EAF6;
-            padding: 50px 0;
-            text-align: center;
+        .footer-custom {
+            background-color: var(--text-dark);
+            color: var(--accent-color);
+            padding: 40px 0;
+            margin-top: 60px;
         }
-
-            .cta-section h2 {
-                color: #2C003E;
-            }
+        .footer-custom a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        .footer-custom a:hover {
+            color: var(--secondary-color);
+        }
+        .footer-custom .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+        .footer-custom .social-icons a:hover {
+            color: var(--accent-color);
+        }
     </style>
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Inicio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="~/images/logo.svg" alt="Coontrera Logo" style="height: 40px; margin-right: 10px;">
+                @* Coontrera *@ </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="FaleConosco">Fale Conosco</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Servicos">Serviços Oferecidos</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="SobreNos">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Conta" asp-action="Login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" && ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Início</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Servicos" ? "active" : "")" asp-controller="Home" asp-action="Servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "SobreNos" ? "active" : "")" asp-controller="Home" asp-action="SobreNos">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "FaleConosco" ? "active" : "")" asp-controller="Home" asp-action="Contato">Contato</a></li>
+                    
+                    @if (Context.Session.GetInt32("UsuarioId") != null) 
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-1"></i> Minha Conta
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                                <li><a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil">Meu Perfil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-controller="Conta" asp-action="Logout">Sair</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item ms-lg-3">
+                             <a class="btn btn-primary btn-sm px-4 py-2" asp-controller="Conta" asp-action="Login">Login</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <main role="main">
         @RenderBody()
-    </div>
+    </main>
 
-    <footer class="text-center mt-4 mb-4">
-        <small>© @DateTime.Now.Year - Coontrera</small>
+    <footer class="footer-custom text-center">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Coontrera</h5>
+                    <p class="small">Pilates e Fisioterapia<br>Transformando movimento em bem-estar.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a asp-controller="Home" asp-action="Servicos">Nossos Serviços</a></li>
+                        <li><a asp-controller="Home" asp-action="SobreNos">Quem Somos</a></li>
+                        <li><a asp-controller="Home" asp-action="FaleConosco">Fale Conosco</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga-nos</h5>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/contrera.pilatesefisioterapia" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=5516994593131" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                </div>
+            </div>
+            <p class="small">&copy; @DateTime.Now.Year - Coontrera. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

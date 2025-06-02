@@ -1,0 +1,48 @@
+@model Coontrera.Models.Usuario
+@{
+    ViewData["Title"] = "Confirmar Deleção";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3 class="text-danger">Tem certeza que deseja deletar este usuário?</h3>
+    <hr />
+    
+    @if (Model == null)
+    {
+        <div class="alert alert-danger">Usuário não encontrado.</div>
+        <a asp-action="Index" class="btn btn-primary">Voltar para a Lista</a>
+    }
+    else
+    {
+        <div class="card shadow-sm col-md-8 offset-md-2">
+            <div class="card-header">
+                 <h4>Detalhes do Usuário: @Model.Nome</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nome)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Telefone)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Telefone)</dd>
+
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataCadastro)</dt>
+                    <dd class="col-sm-9">@Model.DataCadastro.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                    <dt class="col-sm-3">Nível</dt>
+                    <dd class="col-sm-9">@(Model.Nivel != null ? Model.Nivel.Nivel : "N/A")</dd>
+                     </dl>
+
+                <form asp-action="Deletar" asp-route-id="@Model.Id" method="post" class="mt-3">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger">Confirmar Deleção</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    }
+</div>
