@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Text;
 using Coontrera.Data;
 using Coontrera.Helpers;
-using Coontrera.Models;
 using Coontrera.Models.DTOs;
 
 namespace Coontrera.Controllers

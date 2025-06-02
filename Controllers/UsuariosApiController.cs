@@ -4,7 +4,6 @@ using Coontrera.Data;
 using Coontrera.Models;
 using Coontrera.Models.DTOs;
 using Coontrera.Helpers;
-using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 

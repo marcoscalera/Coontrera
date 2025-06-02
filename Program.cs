@@ -1,31 +1,52 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using Coontrera.Data;
 using Coontrera.Helpers;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authentication.Cookies; 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração do banco de dados usando SQL Server
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configuração do MVC
 builder.Services.AddControllersWithViews();
 
-// Configuração do Swagger + Suporte ao JWT
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; 
+});
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme) 
+    .AddCookie(options =>
     {
-        Title = "Coontrera API",
-        Version = "v1",
-        Description = "Documentação da API do projeto Coontrera"
+        options.LoginPath = "/Conta/Login";      
+        options.AccessDeniedPath = "/Conta/AcessoNegado"; 
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        options.SlidingExpiration = true;
+    })
+    .AddJwtBearer(options => 
+    {
+        options.RequireHttpsMetadata = true; 
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("fatecJWT_Coontrera2024_TOP!OK123456")), //
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
     });
 
-    // Suporte ao botão "Authorize"
+
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Coontrera API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -35,59 +56,20 @@ builder.Services.AddSwaggerGen(c =>
         In = ParameterLocation.Header,
         Description = "Digite: Bearer + espaço + seu token JWT"
     });
-
-    // Exige o token em todos os endpoints protegidos
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
             },
             new string[] {}
         }
     });
 });
 
-// Configuração da sessão
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
-
-// Injeção de dependência
-builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
-
-// Configuração do JWT
-var key = Encoding.ASCII.GetBytes("fatecJWT_Coontrera2024_TOP!OK123456");
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = true;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = false,
-        ValidateAudience = false
-    };
-});
-
 var app = builder.Build();
 
-// Pipeline HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -98,17 +80,20 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-app.UseSession();
-app.UseAuthentication(); // JWT
-app.UseAuthorization();
+app.UseSession(); 
+                 
+app.UseAuthentication(); 
+app.UseAuthorization(); 
 
-// Swagger no pipeline
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+if (app.Environment.IsDevelopment()) 
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Coontrera API V1");
-    c.RoutePrefix = "swagger"; // opcional, já deve estar padrão
-});
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Coontrera API V1");
+        c.RoutePrefix = "swagger";
+    });
+}
 
 app.MapControllerRoute(
     name: "default",
