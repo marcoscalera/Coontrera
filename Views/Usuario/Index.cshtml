@@ -1,0 +1,62 @@
+@model IEnumerable<Coontrera.Models.Usuario>
+@{
+    ViewData["Title"] = "Gerenciamento de Usuários";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Usuários Cadastrados</h1>
+        @* <a asp-controller="Conta" asp-action="Cadastro" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Novo Usuário 
+        </a> *@
+        </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info" role="alert">
+            Nenhum usuário cadastrado no momento.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.Telefone)</th>
+                        <th>@Html.DisplayNameFor(model => model.DataCadastro)</th>
+                        <th>Nível</th> <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Telefone)</td>
+                            <td>@item.DataCadastro.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>
+                                @(item.Nivel != null ? item.Nivel.Nivel : "N/A")
+                                </td>
+                            <td>
+                                <a asp-action="Editar" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary me-1" title="Editar">
+                                    <i class="fas fa-pencil-alt"></i> Editar
+                                </a>
+                                <a asp-action="Deletar" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger" title="Deletar">
+                                    <i class="fas fa-trash-alt"></i> Deletar
+                                </a>
+                                </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    }

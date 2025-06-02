@@ -1,120 +1,285 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Serviços";
+    ViewData["Title"] = "Nossos Serviços";
 }
-<style>
-    body {
-        background-color: #f8f5fb;
-        color: #5a3d5c;
-    }
 
-    .service-section {
-        padding: 50px 0;
-    }
-
-    .service-title {
-        font-weight: bold;
-    }
-
-    .service-item {
-        margin-bottom: 50px;
-    }
-
-    .service-menu {
-        background-color: #e9d8f4;
-        padding: 15px;
-        border-radius: 10px;
-        display: inline-block;
-    }
-
-        .service-menu a {
-            color: #5a3d5c;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            display: inline-block;
-            transition: background 0.3s, color 0.3s;
-            border-radius: 5px;
+@section Styles {
+    <style>
+        .page-header-section {
+            background-color: var(--secondary-color); 
+            padding: 60px 0;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-header-section h1 {
+            font-family: var(--font-headings);
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        .page-header-section p.lead {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
-            .service-menu a:hover {
-                background-color: #cba6e0;
-                color: white;
-            }
+        .services-nav-menu {
+            position: sticky;
+            top: 80px; 
+            z-index: 100;
+            background-color: var(--bg-light);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            overflow-x: auto; 
+            white-space: nowrap; 
+        }
+        .services-nav-menu .nav-pills .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            border-radius: 8px;
+            margin: 0 5px;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+        }
+        .services-nav-menu .nav-pills .nav-link.active,
+        .services-nav-menu .nav-pills .nav-link:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(var(--bs-primary-rgb), 0.3);
+        }
 
-    .service-image {
-        max-width: 80%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-</style>
-    <div class="container text-center py-5">
-        <h2 class="service-title">Conheça nossos serviços!</h2>
-        <div class="service-menu mt-4">
-            <a href="#fisioterapia">Fisioterapia</a>
-            <a href="#pilates">Pilates</a>
-            <a href="#quiropraxia">Quiropraxia</a>
-            <a href="#hidroterapia">Hidroterapia</a>
-            <a href="#liberacao">Liberação Miofascial</a>
-            <a href="#dryneedling">Dry Needling</a>
-        </div>
-    </div>
+        .service-detail-item {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .service-detail-item:last-child {
+            border-bottom: none;
+        }
+        .service-detail-item:nth-child(even) .row {
+            flex-direction: row-reverse; 
+        }
+         .service-detail-item:nth-child(even) .service-image-container {
+            text-align: left; 
+        }
 
-    <div class="container service-section">
-        <div class="row service-item" id="fisioterapia">
-            <div class="col-md-6">
-                <h3 class="service-title">Fisioterapia</h3>
-                <p>A fisioterapia é uma área da saúde que estuda, previne e trata distúrbios do movimento humano. O objetivo é preservar, manter, desenvolver ou restaurar a integridade dos membros, sistemas ou funções. O fisioterapêuta é um profissional que avalia, diagnostica, previne e trata distúrbios do movimento e funcionalidade do corpo humano. Para isso, utiliza-se técnicas terapêuticas como exercícios de fortalecimento e alongamento para promover a saúde e bem-estar dos pacientes.</p>
-            </div>
-            <div class="col-md-6">
-            <img src="~/images/vetor fisio.svg" class="img-fluid service-image" alt="Fisioterapia">
-            </div>
-        </div>
-        <div class="row service-item" id="pilates">
-            <div class="col-md-6 order-md-2">
-                <h3 class="service-title">Pilates</h3>
-                <p>Pilates é um método de treinamento que pode gerar inúmeros benefícios para o corpo e a mente. Através dele é possível trabalhar a coordenação motora, flexibilidade, mobilidade, equilíbrio e postura. É indicado para todos os públicos, incluindo crianças, idosos, pessoas com patologias e gestantes.</p>
-            </div>
-            <div class="col-md-6 order-md-1">
-            <img src="~/images/vetor pilates.svg" class="img-fluid service-image" alt="Pilates">
-            </div>
-        </div>
-        <div class="row service-item" id="quiropraxia">
-            <div class="col-md-6">
-                <h3 class="service-title">Quiropraxia</h3>
-                <p>A quiropraxia clínica é uma prática de saúde que se baseia na manipulação articular da coluna vertebral e do sistema musculoesquelético para tratar e prevenir problemas de saúde: Alívio de dores, Redução do risco de lesões, Melhora da qualidade de vida, Promoção do bem-estar geral. A quiropraxia é uma vertente da medicina alternativa reconhecida pela Organização Mundial da Saúde (OMS) desde 2005.</p>
-            </div>
-            <div class="col-md-6">
-            <img src="~/images/vetor quiropraxia.svg" class="img-fluid service-image" alt="Quiropraxia">
-            </div>
-        </div>
-        <div class="row service-item" id="hidroterapia">
-            <div class="col-md-6 order-md-2">
-                <h3 class="service-title">Hidroterapia</h3>
-                <p>Hidroterapia: trabalha com movimentos e exercícios dentro da piscina, que estimulam a recuperação de lesões, trabalham musculatura e fortalecem o corpo. Também tem fins terapêuticos, pois a piscina é cheia com água morna.</p>
-            </div>
-            <div class="col-md-6 order-md-1">
-            <img src="~/images/vetor hidroterapia.svg" class="img-fluid service-image" alt="Hidroterapia">
-            </div>
-        </div>
-        <div class="row service-item" id="liberacao">
-            <div class="col-md-6">
-                <h3 class="service-title">Liberação Miofascial</h3>
-                <p>A liberação miofascial é uma técnica terapêutica que visa aliviar dores musculares e tensões, melhorando a mobilidade e a flexibilidade. É uma terapia manual que consiste em pressionar pontos específicos do corpo, com o objetivo de liberar o tecido fibroso que reveste os músculos, chamado fáscia.</p>
-            </div>
-            <div class="col-md-6">
-            <img src="~/images/vetor liberacao.svg" class="img-fluid service-image" alt="Liberação Miofascial">
-            </div>
-        </div>
-        <div class="row service-item" id="dryneedling">
-            <div class="col-md-6 order-md-2">
-                <h3 class="service-title">Dry Needling</h3>
-                <p>Dry Needling é uma técnica terapêutica que consiste na inserção de uma agulha fina em um ponto gatilho miofascial (OGM) para aliviar dores musculares e melhorar a mobilidade. O Dry Needling é um tratamento rápido, seguro e eficaz para controlar lesões e inflamações musculoesqueléticas.</p>
-            </div>
-            <div class="col-md-6 order-md-1">
-            <img src="~/images/vetor dry.svg" class="img-fluid service-image" alt="Dry Needling">
-            </div>
-        </div>
+
+        .service-detail-item .service-content h2 {
+            font-family: var(--font-primary);
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .service-detail-item .service-content p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .service-detail-item .service-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .service-detail-item .service-content ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .service-detail-item .service-content ul li::before {
+            content: "\f00c"; /* Ícone de check do Font Awesome */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .service-image-container {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             text-align: right; 
+        }
+        .service-detail-item .service-image {
+            max-width: 90%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(122, 79, 155, 0.15);
+        }
+        
+        /* Scrollspy */
+        body {
+            position: relative; /
+        }
+
+    </style>
+}
+
+<section class="page-header-section">
+    <div class="container">
+        <h1 data-aos="fade-up">Nossos Tratamentos Especializados</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">
+            Descubra como nossas terapias podem ajudar você a alcançar seus objetivos de saúde e bem-estar.
+        </p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+
+<nav id="servicesNavbar" class="services-nav-menu">
+    <div class="container">
+        <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item"><a class="nav-link" href="#fisioterapia">Fisioterapia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pilates">Pilates</a></li>
+            <li class="nav-item"><a class="nav-link" href="#quiropraxia">Quiropraxia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#hidroterapia">Hidroterapia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#liberacao">Lib. Miofascial</a></li>
+            <li class="nav-item"><a class="nav-link" href="#dryneedling">Dry Needling</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div data-bs-spy="scroll" data-bs-target="#servicesNavbar" data-bs-offset="150" tabindex="0">
+
+    <section class="service-detail-item" id="fisioterapia">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 service-content" data-aos="fade-right">
+                    <h2>Fisioterapia Personalizada</h2>
+                    <p>A fisioterapia é uma ciência da saúde focada no estudo, prevenção e tratamento de distúrbios do movimento humano. Nosso objetivo é preservar, desenvolver ou restaurar a integridade de órgãos, sistemas ou funções, utilizando técnicas terapêuticas avançadas e personalizadas para promover sua saúde e bem-estar integral.</p>
+                    <ul>
+                        <li>Avaliação diagnóstica completa</li>
+                        <li>Tratamento de lesões ortopédicas e esportivas</li>
+                        <li>Reabilitação neurológica e cardiorrespiratória</li>
+                        <li>Prevenção de disfunções e promoção da saúde</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Fisioterapia." target="_blank" class="btn btn-primary mt-3"><i class="fab fa-whatsapp me-2"></i>Agendar Avaliação</a>
+                </div>
+                <div class="col-lg-6 service-image-container" data-aos="fade-left">
+                    <img src="~/images/vetor fisio.svg" class="img-fluid service-image" alt="Fisioterapia">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail-item" id="pilates">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 service-content" data-aos="fade-left"> <h2>Pilates para Todos</h2>
+                    <p>O método Pilates oferece inúmeros benefícios para corpo e mente, trabalhando coordenação, flexibilidade, mobilidade, equilíbrio e postura. É indicado para todos, desde crianças a idosos, gestantes e pessoas com patologias específicas, adaptando-se a cada necessidade.</p>
+                     <ul>
+                        <li>Aumento da força e tônus muscular</li>
+                        <li>Melhora da flexibilidade e mobilidade articular</li>
+                        <li>Correção postural e alívio de dores crônicas</li>
+                        <li>Consciência corporal e bem-estar mental</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Pilates." target="_blank" class="btn btn-primary mt-3"><i class="fab fa-whatsapp me-2"></i>Agendar Aula Experimental</a>
+                </div>
+                <div class="col-lg-6 service-image-container" data-aos="fade-right">
+                     <img src="~/images/vetor pilates.svg" class="img-fluid service-image" alt="Pilates">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail-item" id="quiropraxia">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 service-content" data-aos="fade-right">
+                    <h2>Quiropraxia Clínica Avançada</h2>
+                    <p>A quiropraxia clínica foca na manipulação articular da coluna e sistema musculoesquelético para tratar e prevenir problemas, aliviando dores, reduzindo risco de lesões e promovendo bem-estar. Reconhecida pela OMS, é uma abordagem eficaz para uma vida mais saudável.</p>
+                    <ul>
+                        <li>Alívio de dores na coluna (cervical, torácica, lombar)</li>
+                        <li>Tratamento de hérnias de disco e ciatalgia</li>
+                        <li>Correção de subluxações vertebrais</li>
+                        <li>Melhora da mobilidade e função articular</li>
+                    </ul>
+                     <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Quiropraxia." target="_blank" class="btn btn-primary mt-3"><i class="fab fa-whatsapp me-2"></i>Agendar Consulta</a>
+                </div>
+                <div class="col-lg-6 service-image-container" data-aos="fade-left">
+                     <img src="~/images/vetor quiropraxia.svg" class="img-fluid service-image" alt="Quiropraxia">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail-item" id="hidroterapia">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 service-content" data-aos="fade-left">
+                    <h2>Hidroterapia Revigorante</h2>
+                    <p>Movimentos e exercícios terapêuticos em piscina aquecida estimulam a recuperação de lesões, trabalham a musculatura e fortalecem o corpo, ideal para reabilitação com baixo impacto e relaxamento.</p>
+                    <ul>
+                        <li>Reabilitação de lesões com baixo impacto</li>
+                        <li>Alívio de dores articulares e musculares</li>
+                        <li>Melhora da circulação e relaxamento</li>
+                        <li>Fortalecimento muscular suave e progressivo</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Hidroterapia." target="_blank" class="btn btn-primary mt-3"><i class="fab fa-whatsapp me-2"></i>Saber Mais</a>
+                </div>
+                <div class="col-lg-6 service-image-container" data-aos="fade-right">
+                    <img src="~/images/vetor hidroterapia.svg" class="img-fluid service-image" alt="Hidroterapia">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="service-detail-item" id="liberacao">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 service-content" data-aos="fade-right">
+                    <h2>Liberação Miofascial</h2>
+                    <p>Técnica terapêutica para aliviar dores musculares e tensões, melhorando mobilidade e flexibilidade através da pressão em pontos específicos para liberar o tecido fibroso (fáscia) que reveste os músculos.</p>
+                    <ul>
+                        <li>Alívio de tensões e contraturas musculares</li>
+                        <li>Aumento da flexibilidade e amplitude de movimento</li>
+                        <li>Melhora da circulação sanguínea local</li>
+                        <li>Prevenção de lesões e dores crônicas</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Libera%C3%A7%C3%A3o%20Miofascial." target="_blank" class="btn btn-primary mt-3"><i class="fab fa-whatsapp me-2"></i>Agendar Sessão</a>
+                </div>
+                <div class="col-lg-6 service-image-container" data-aos="fade-left">
+                    <img src="~/images/vetor liberacao.svg" class="img-fluid service-image" alt="Liberação Miofascial">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail-item" id="dryneedling">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 service-content" data-aos="fade-left">
+                    <h2>Dry Needling (Agulhamento a Seco)</h2>
+                    <p>Técnica que utiliza agulhas finas em pontos gatilho miofasciais para aliviar dores musculares e melhorar a mobilidade. Tratamento rápido, seguro e eficaz para controlar lesões e inflamações musculoesqueléticas.</p>
+                     <ul>
+                        <li>Alívio rápido de pontos gatilho e dores referidas</li>
+                        <li>Restauração da função muscular normal</li>
+                        <li>Redução da inflamação e espasmos musculares</li>
+                        <li>Complemento eficaz a outras terapias manuais</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Dry%20Needling." target="_blank" class="btn btn-primary mt-3"><i class="fab fa-whatsapp me-2"></i>Consultar Especialista</a>
+                </div>
+                <div class="col-lg-6 service-image-container" data-aos="fade-right">
+                    <img src="~/images/vetor dry.svg" class="img-fluid service-image" alt="Dry Needling">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@section Scripts {
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#servicesNavbar',
+            offset: 150 
+        });
+    </script>
+}
