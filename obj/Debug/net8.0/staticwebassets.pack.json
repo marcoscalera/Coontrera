@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\irmas.jpg"
     },
     {
+      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\irmas3.jpg",
+      "PackagePath": "staticwebassets\\images\\irmas3.jpg"
+    },
+    {
       "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\logo (2).svg",
       "PackagePath": "staticwebassets\\images\\logo (2).svg"
     },
@@ -147,14 +151,6 @@
     {
       "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\images\\whatsapp-icon.svg",
       "PackagePath": "staticwebassets\\images\\whatsapp-icon.svg"
-    },
-    {
-      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\js\\.keep",
-      "PackagePath": "staticwebassets\\js\\.keep"
-    },
-    {
-      "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\lib\\bootstrap\\LICENSE",

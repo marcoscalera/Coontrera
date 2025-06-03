@@ -1,147 +1,66 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Acesse sua Conta";
+    ViewData["ActivePage"] = "Login";
 }
 
-@section Styles {
-    <style>
-        .login-page-container {
-            min-height: calc(100vh - 160px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 0;
-        }
-
-        .login-card {
-            background-color: var(--white);
-            padding: 40px 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(122, 79, 155, 0.12);
-            width: 100%;
-            max-width: 480px;
-        }
-
-        .login-card .logo-container {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .login-card .logo-container img {
-            max-height: 70px; 
-        }
-
-        .login-card h2.form-title {
-            font-family: var(--font-primary);
-            font-weight: 600;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 1.8rem;
-        }
-        .login-card p.form-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-
-        .form-floating label {
-            color: var(--text-light);
-        }
-        .form-floating > .form-control:focus ~ label,
-        .form-floating > .form-control:not(:placeholder-shown) ~ label {
-            /* Estilo para label flutuante quando focado ou preenchido */
-            color: var(--primary-color);
-        }
-        .form-control:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.15); /* Usando variável Bootstrap para cor do shadow */
-        }
-        .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid var(--light-gray);
-        }
-        .form-control, .form-select {
-             min-height: calc(1.5em + 1rem + 2px); /* Ajuste para altura do input */
-        }
-
-
-        .login-card .btn-login {
-            padding: 12px;
-            font-size: 1.05rem;
-            font-weight: 600;
-        }
-
-        .login-card .extra-links {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        .login-card .extra-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .login-card .extra-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
-}
-
-<div class="login-page-container">
-    <div class="login-card" data-aos="fade-up">
+<div class="auth-page-container">
+    <div class="auth-card" data-aos="fade-up">
         <div class="logo-container">
             <a asp-controller="Home" asp-action="Index">
                 <img src="~/images/logo.svg" alt="Coontrera Logo">
-                </a>
+            </a>
         </div>
 
-        <h2 class="form-title">Bem-vindo(a) de Volta!</h2>
-        <p class="form-subtitle">Acesse sua conta para continuar.</p>
+        <h2 class="form-title">@ViewData["Title"]</h2>
+        <p class="form-subtitle">Bem-vindo(a) de volta! Faça login para continuar.</p>
 
         @if (!string.IsNullOrEmpty(ViewBag.Erro))
         {
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div class="alert alert-danger d-flex align-items-center mb-3" role="alert">
                 <i class="fas fa-exclamation-triangle me-2"></i>
                 <div>@ViewBag.Erro</div>
             </div>
         }
         @if (!string.IsNullOrEmpty(ViewBag.Sucesso))
         {
-            <div class="alert alert-success d-flex align-items-center" role="alert">
+            <div class="alert alert-success d-flex align-items-center mb-3" role="alert">
                 <i class="fas fa-check-circle me-2"></i>
                 <div>@ViewBag.Sucesso</div>
             </div>
         }
         @if (TempData["CadastroSucesso"] != null && (bool)TempData["CadastroSucesso"])
         {
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-                <i class="fas fa-party-horn me-2"></i> <div>
-                    <strong>Parabéns!</strong> Seu cadastro foi realizado com sucesso! Você ganhou uma aula experimental gratuita. Nossa equipe entrará em contato.
+            <div class="alert alert-success d-flex align-items-center mb-3" role="alert">
+                <i class="fas fa-party-horn me-2"></i>
+                <div>
+                    <strong>Parabéns!</strong> Cadastro realizado com sucesso! Você ganhou uma aula experimental gratuita. Nossa equipe entrará em contato.
                 </div>
             </div>
         }
 
-
-        <form asp-controller="Conta" asp-action="Login" method="post" class="mt-4">
-            <div class="form-floating mb-3">
-                <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Seu telefone" required>
-                <label for="telefone">Telefone</label>
+        <form asp-controller="Conta" asp-action="Login" method="post" class="needs-validation mt-4" novalidate>
+            @Html.AntiForgeryToken()
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Seu telefone cadastrado" required>
+                <div class="invalid-feedback">Por favor, insira seu telefone.</div>
             </div>
-            <div class="form-floating mb-3">
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
                 <input type="password" id="senha" name="senha" class="form-control" placeholder="Sua senha" required>
-                <label for="senha">Senha</label>
+                <div class="invalid-feedback">Por favor, insira sua senha.</div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center mb-4 extra-links">
-                @* <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
-                    <label class="form-check-label" for="rememberMe">Lembrar de mim</label>
-                </div> *@
-                <div></div> <a asp-controller="Conta" asp-action="NovaSenha">Esqueceu a senha?</a>
+                <div class="form-check">
+                    @* <input class="form-check-input" type="checkbox" value="" id="rememberMe" name="rememberMe"> *@
+                    @* <label class="form-check-label" for="rememberMe">Lembrar de mim</label> *@
+                </div>
+                <a asp-controller="Conta" asp-action="NovaSenha">Esqueceu a senha?</a>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100 btn-login">Entrar</button>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Entrar</button>
         </form>
 
         <div class="text-center mt-4 extra-links">
@@ -152,12 +71,20 @@
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 600,
-            once: true
-        });
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })();
     </script>
-}
+}@* MARCOS PAULO CALERA *@

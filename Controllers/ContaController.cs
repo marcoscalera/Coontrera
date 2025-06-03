@@ -187,7 +187,7 @@ namespace Coontrera.Controllers
 
         public IActionResult AcessoNegado()
         {
-            return View(); // Crie Views/Conta/AcessoNegado.cshtml
+            return View();
         }
     }
 }

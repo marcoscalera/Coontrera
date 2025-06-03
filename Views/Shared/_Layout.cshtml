@@ -13,192 +13,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 
-    <style>
-        :root {
-            --primary-color: #7A4F9B;
-            --secondary-color: #A076C2; 
-            --accent-color: #C7A2E4;
-            --text-dark: #311B40;
-            --text-light: #6D5A7C; 
-            --bg-light: #FBF9FF; 
-            --white: #FFFFFF;
-            --light-gray: #f0e8f7; 
-            --success-color: #28a745;
-            --danger-color: #dc3545;
-
-            --font-primary: 'Poppins', sans-serif;
-            --font-headings: 'Playfair Display', serif; 
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            padding-top: 80px; 
-            line-height: 1.7;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-headings); 
-            color: var(--primary-color);
-            font-weight: 600; 
-        }
-        h1.display-1, h1.display-2, h1.display-3 { 
-             font-family: var(--font-headings);
-             color: var(--primary-color);
-        }
-
-
-        .navbar-custom {
-            background-color: var(--white);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-            padding: 1rem 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .navbar-custom .navbar-brand {
-            font-family: var(--font-headings);
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .navbar-custom .nav-link {
-            color: var(--text-dark);
-            font-weight: 500;
-            margin-left: 15px;
-            margin-right: 15px;
-            transition: color 0.3s ease;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .navbar-custom .nav-link:hover,
-        .navbar-custom .nav-link.active {
-            color: var(--primary-color);
-        }
-        
-        .navbar-custom .nav-link::after { 
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .navbar-custom .nav-link:hover::after,
-        .navbar-custom .nav-link.active::after {
-            width: 70%;
-        }
-
-
-        .btn {
-            border-radius: 8px; 
-            padding: 10px 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border: none;
-        }
-        .btn:hover{
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-        .btn-primary:hover {
-            background-color: darken(var(--primary-color), 10%);
-            color: var(--white);
-        }
-
-        .btn-outline-primary {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            background-color: transparent;
-        }
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .btn-light-accent { 
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        .btn-light-accent:hover {
-            background-color: darken(var(--accent-color), 5%);
-            color: var(--primary-color);
-        }
-
-
-        .footer-custom {
-            background-color: var(--text-dark);
-            color: var(--accent-color);
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-        .footer-custom a {
-            color: var(--white);
-            text-decoration: none;
-        }
-        .footer-custom a:hover {
-            color: var(--secondary-color);
-        }
-        .footer-custom .social-icons a {
-            font-size: 1.5rem;
-            margin: 0 10px;
-            color: var(--white);
-            transition: color 0.3s ease;
-        }
-        .footer-custom .social-icons a:hover {
-            color: var(--accent-color);
-        }
-    </style>
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
-   <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                <img src="~/images/logo.svg" alt="Coontrera Logo" style="height: 40px; margin-right: 10px;">
-                @* Coontrera *@ </a>
+                <img src="~/images/logo.svg" alt="Coontrera Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" && ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Início</a></li>
-                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Servicos" ? "active" : "")" asp-controller="Home" asp-action="Servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "SobreNos" ? "active" : "")" asp-controller="Home" asp-action="SobreNos">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "FaleConosco" ? "active" : "")" asp-controller="Home" asp-action="Contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewData["ActivePage"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Início</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewData["ActivePage"]?.ToString() == "Servicos" ? "active" : "")" asp-controller="Home" asp-action="Servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewData["ActivePage"]?.ToString() == "SobreNos" ? "active" : "")" asp-controller="Home" asp-action="SobreNos">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link @(ViewData["ActivePage"]?.ToString() == "FaleConosco" ? "active" : "")" asp-controller="Home" asp-action="FaleConosco">Contato</a></li>
                     
-                    @if (Context.Session.GetInt32("UsuarioId") != null) 
+                    @if (Context.User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-1"></i> Minha Conta
+                            <a class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Usuario" || ViewContext.RouteData.Values["Controller"]?.ToString() == "Conta" && ViewContext.RouteData.Values["Action"]?.ToString() == "Perfil" ? "active" : "")" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-1"></i> @Context.User.Identity.Name
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
-                                <li><a class="dropdown-item" asp-controller="Usuario" asp-action="Perfil">Meu Perfil</a></li>
+                                @if (User.IsInRole("3")) // Assumindo que "3" é a role de admin
+                                {
+                                    <li><a class="dropdown-item" asp-controller="Usuario" asp-action="Index">Painel Admin</a></li>
+                                }
+                                <li><a class="dropdown-item" asp-controller="Conta" asp-action="MeuPerfil">Meu Perfil</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" asp-controller="Conta" asp-action="Logout">Sair</a></li>
+                                <li>
+                                    <form asp-controller="Conta" asp-action="Logout" method="post" id="logoutForm" class="d-inline">
+                                        <button type="submit" class="dropdown-item" style="border:none; background:none; cursor:pointer; width:100%; text-align:left;">
+                                            <i class="fas fa-sign-out-alt me-1"></i> Sair
+                                        </button>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     }
                     else
                     {
                         <li class="nav-item ms-lg-3">
-                             <a class="btn btn-primary btn-sm px-4 py-2" asp-controller="Conta" asp-action="Login">Login</a>
+                             <a class="btn btn-primary btn-sm px-4 py-2 @(ViewData["ActivePage"]?.ToString() == "Login" ? "active-btn" : "")" asp-controller="Conta" asp-action="Login">Login</a>
                         </li>
                     }
                 </ul>
@@ -212,33 +73,46 @@
 
     <footer class="footer-custom text-center">
         <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row py-4 gy-4">
+                <div class="col-lg-4 col-md-6">
                     <h5>Coontrera</h5>
-                    <p class="small">Pilates e Fisioterapia<br>Transformando movimento em bem-estar.</p>
+                    <p class="small mb-0">Pilates e Fisioterapia.<br>Movimento que transforma, cuidado que inspira.</p>
                 </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>Links Rápidos</h5>
-                    <ul class="list-unstyled">
+                <div class="col-lg-4 col-md-6">
+                    <h5>Navegue</h5>
+                    <ul class="list-unstyled mb-0">
                         <li><a asp-controller="Home" asp-action="Servicos">Nossos Serviços</a></li>
                         <li><a asp-controller="Home" asp-action="SobreNos">Quem Somos</a></li>
                         <li><a asp-controller="Home" asp-action="FaleConosco">Fale Conosco</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a asp-controller="Home" asp-action="TermosDeUso">Termos de Uso</a></li>
+                        <li><a asp-controller="Home" asp-action="PoliticaPrivacidade">Política de Privacidade</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Siga-nos</h5>
-                    <div class="social-icons">
+                <div class="col-lg-4 col-md-12">
+                    <h5>Conecte-se</h5>
+                    <div class="social-icons mb-2">
                         <a href="https://instagram.com/contrera.pilatesefisioterapia" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://api.whatsapp.com/send?phone=5516994593131" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         </div>
+                    <p class="small mb-0">contato@coontrera.com.br</p>
+                    <p class="small mb-0">(16) 99459-3131</p>
                 </div>
             </div>
-            <p class="small">&copy; @DateTime.Now.Year - Coontrera. Todos os direitos reservados.</p>
+            <hr style="border-color: var(--secondary-color); opacity: 0.5;">
+            <p class="small pt-3 mb-0">&copy; @DateTime.Now.Year - Coontrera Pilates e Fisioterapia. Todos os direitos reservados.</p>
         </div>
     </footer>
-
+    @* MARCOS PAULO CALERA *@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 50 // Inicia animação um pouco antes do elemento entrar na tela
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

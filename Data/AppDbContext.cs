@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Coontrera.Models; // Ajuste conforme onde estão seus Models
+using Coontrera.Models; 
 
 namespace Coontrera.Data
 {

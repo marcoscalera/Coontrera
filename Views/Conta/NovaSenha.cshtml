@@ -1,68 +1,13 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Redefinir Senha";
+    ViewData["ActivePage"] = "NovaSenha"; 
     bool etapaSolicitar = ViewBag.EtapaRedefinicao == null || ViewBag.EtapaRedefinicao == 1;
     bool etapaRedefinir = ViewBag.EtapaRedefinicao == 2;
 }
 
-@section Styles {
-    <style>
-        .password-reset-page-container {
-            min-height: calc(100vh - 160px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 0;
-        }
-        .password-reset-card {
-            background-color: var(--white);
-            padding: 40px 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(122, 79, 155, 0.12);
-            width: 100%;
-            max-width: 480px;
-        }
-        .password-reset-card .logo-container {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .password-reset-card .logo-container img {
-            max-height: 70px;
-        }
-        .password-reset-card h2.form-title {
-            font-family: var(--font-primary);
-            font-weight: 600;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 1.8rem;
-        }
-        .password-reset-card p.form-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-        .form-label {
-            color: var(--text-dark);
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-        }
-        .form-control {
-            border-radius: 8px;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            border: 1px solid var(--light-gray);
-        }
-        .form-control:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.15);
-        }
-    </style>
-}
-
-<div class="password-reset-page-container">
-    <div class="password-reset-card" data-aos="fade-up">
+<div class="auth-page-container">
+    <div class="auth-card" data-aos="fade-up">
         <div class="logo-container">
              <a asp-controller="Home" asp-action="Index">
                 <img src="~/images/logo.svg" alt="Coontrera Logo">
@@ -73,7 +18,7 @@
 
         @if (etapaSolicitar)
         {
-            <p class="form-subtitle">Informe seu e-mail e telefone cadastrados para iniciar o processo de redefinição de senha.</p>
+            <p class="form-subtitle">Informe seu e-mail e telefone cadastrados para iniciar o processo.</p>
         }
         else if (etapaRedefinir)
         {
@@ -82,66 +27,79 @@
 
         @if (!string.IsNullOrEmpty(ViewBag.Erro))
         {
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div class="alert alert-danger d-flex align-items-center mb-3" role="alert">
                 <i class="fas fa-exclamation-triangle me-2"></i>
                 <div>@ViewBag.Erro</div>
             </div>
         }
         @if (!string.IsNullOrEmpty(ViewBag.Sucesso))
         {
-            <div class="alert alert-success d-flex align-items-center" role="alert">
+            <div class="alert alert-success d-flex align-items-center mb-3" role="alert">
                 <i class="fas fa-check-circle me-2"></i>
                 <div>@ViewBag.Sucesso</div>
-                <div class="mt-2 ms-auto">
-                     <a asp-controller="Conta" asp-action="Login" class="btn btn-sm btn-success">Ir para Login</a>
-                </div>
+                <a asp-controller="Conta" asp-action="Login" class="btn btn-sm btn-success ms-auto">Ir para Login</a>
             </div>
         }
 
         @if (etapaSolicitar)
         {
-            <form asp-controller="Conta" asp-action="SolicitarRedefinicaoSenha" method="post" class="mt-4">
+            <form asp-controller="Conta" asp-action="SolicitarRedefinicaoSenha" method="post" class="needs-validation mt-4" novalidate>
+                @Html.AntiForgeryToken()
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail cadastrado" required value="@ViewBag.Email">
+                    <div class="invalid-feedback">Por favor, insira seu e-mail.</div>
                 </div>
                 <div class="mb-3">
                     <label for="telefone" class="form-label">Telefone</label>
                     <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Seu telefone cadastrado" required value="@ViewBag.Telefone">
+                    <div class="invalid-feedback">Por favor, insira seu telefone.</div>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Verificar Dados</button>
             </form>
         }
         else if (etapaRedefinir)
         {
-            <form asp-controller="Conta" asp-action="NovaSenha" method="post" class="mt-4">
+            <form asp-controller="Conta" asp-action="NovaSenha" method="post" class="needs-validation mt-4" novalidate>
+                @Html.AntiForgeryToken()
                 <input type="hidden" name="telefone" value="@ViewBag.TelefoneValidado" />
                 <div class="mb-3">
                     <label for="novaSenha" class="form-label">Nova Senha</label>
-                    <input type="password" id="novaSenha" name="novaSenha" class="form-control" placeholder="Digite a nova senha" required>
+                    <input type="password" id="novaSenha" name="novaSenha" class="form-control" placeholder="Digite a nova senha (mín. 6 caracteres)" required minlength="6">
+                    <div class="invalid-feedback">A senha deve ter no mínimo 6 caracteres.</div>
                 </div>
                 <div class="mb-3">
                     <label for="confirmarSenha" class="form-label">Confirmar Nova Senha</label>
                     <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme a nova senha" required>
+                    <div class="invalid-feedback">Por favor, confirme sua nova senha.</div>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Alterar Senha</button>
             </form>
         }
         
-        <div class="text-center mt-4">
-             <a asp-controller="Conta" asp-action="Login" style="color: var(--primary-color); font-weight: 500; font-size: 0.9rem;">Voltar para o Login</a>
+        <div class="text-center mt-4 extra-links">
+             <a asp-controller="Conta" asp-action="Login">Voltar para o Login</a>
         </div>
     </div>
 </div>
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 600,
-            once: true
-        });
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })();
+            @* MARCOS PAULO CALERA *@
     </script>
 }
