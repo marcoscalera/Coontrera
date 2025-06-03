@@ -2,80 +2,11 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Crie sua Conta";
+    ViewData["ActivePage"] = "Cadastro"; 
 }
 
-@section Styles {
-    <style>
-        body {
-            background-color: #f6eefb;
-        }
-        .container-box {
-            max-width: 600px;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(122, 79, 155, 0.12);
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-        .container-box .logo-container {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .container-box .logo-container img {
-            max-height: 70px;
-        }
-        .container-box h2.form-title {
-            font-family: var(--font-primary);
-            font-weight: 600;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 1.8rem;
-        }
-        .container-box p.form-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-        .form-check-label {
-            color: #5e315b;
-        }
-        .tooltip-inner {
-            max-width: 300px;
-            text-align: justify;
-            background-color: #d1a3ff;
-            color: white;
-            border-radius: 5px;
-            padding: 10px;
-        }
-        .modal-content-custom {
-            background-color: #f6eefb;
-            color: #5e315b;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .form-label {
-            color: var(--text-dark);
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-        }
-        .form-control, .form-select {
-            border-radius: 8px;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            border: 1px solid var(--light-gray);
-        }
-        .form-control:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.15);
-        }
-    </style>
-}
-
-<div class="container d-flex justify-content-center align-items-center min-vh-100 py-4">
-    <div class="container-box w-100" data-aos="fade-up">
+<div class="auth-page-container">
+    <div class="auth-card auth-card-cadastro" data-aos="fade-up">
         <div class="logo-container">
             <a asp-controller="Home" asp-action="Index">
                 <img src="~/images/logo.svg" alt="Coontrera Logo">
@@ -84,7 +15,7 @@
         <h2 class="form-title">@ViewData["Title"]</h2>
         <p class="form-subtitle">Preencha os campos abaixo para se cadastrar.</p>
 
-        <div asp-validation-summary="ModelOnly" class="alert alert-danger d-flex align-items-center" role="alert">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger d-flex align-items-center" role="alert" style="@(ViewData.ModelState.IsValid ? "display:none;" : "")">
              <i class="fas fa-exclamation-triangle me-2"></i>
              <div></div>
         </div>
@@ -101,96 +32,93 @@
             }
         }
 
-        <form asp-controller="Cadastro" asp-action="Cadastro" method="post">
+        <form asp-controller="Cadastro" asp-action="Cadastro" method="post" class="needs-validation" novalidate>
+            @Html.AntiForgeryToken()
             <div class="mb-3">
                 <label asp-for="Nome" class="form-label">Nome Completo</label>
-                <input asp-for="Nome" class="form-control" placeholder="Digite seu nome completo">
+                <input asp-for="Nome" class="form-control" placeholder="Seu nome completo" required>
                 <span asp-validation-for="Nome" class="text-danger small mt-1"></span>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label asp-for="Telefone" class="form-label">Telefone</label>
-                    <input asp-for="Telefone" type="tel" class="form-control" placeholder="Ex: 16999998888">
+                    <label asp-for="Telefone" class="form-label">Telefone (somente números)</label>
+                    <input asp-for="Telefone" type="tel" class="form-control" placeholder="Ex: 16999998888" required pattern="^\d{10,11}$">
                     <span asp-validation-for="Telefone" class="text-danger small mt-1"></span>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label asp-for="Email" class="form-label">Email</label>
-                    <input asp-for="Email" type="email" class="form-control" placeholder="seuemail@exemplo.com">
+                    <input asp-for="Email" type="email" class="form-control" placeholder="seuemail@exemplo.com" required>
                     <span asp-validation-for="Email" class="text-danger small mt-1"></span>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Senha" class="form-label">Senha</label>
-                <input asp-for="Senha" type="password" class="form-control" placeholder="Crie uma senha forte">
+                <input asp-for="Senha" type="password" class="form-control" placeholder="Crie uma senha forte (mín. 6 caracteres)" required minlength="6">
                 <span asp-validation-for="Senha" class="text-danger small mt-1"></span>
             </div>
-
+            
             <div class="mb-4 form-check">
                 <input type="checkbox" class="form-check-input" id="termos" name="termos" value="true" required>
                 <label class="form-check-label" for="termos" data-bs-toggle="tooltip" data-bs-placement="top"
-                       title="Ao aceitar estes Termos de Uso, você concorda e autoriza expressamente que a clínica, na qualidade de controladora dos dados, utilize suas informações pessoais, incluindo o número de telefone fornecido no cadastro, para fins de contato e prestação de serviços, conforme previsto em nossa Política de Privacidade. Ressaltamos que seus dados serão tratados com segurança e confidencialidade, em conformidade com a Lei nº 13.709/2018 (LGPD). Você pode, a qualquer momento, revogar esta autorização ou solicitar mais informações sobre o tratamento dos seus dados através dos canais de atendimento disponibilizados.">
-                    Li e aceito os <a href="/termos-de-uso" target="_blank" style="color: var(--primary-color);">Termos de Uso</a> e <a href="/politica-de-privacidade" target="_blank" style="color: var(--primary-color);">Política de Privacidade</a>.
+                       title="Ao aceitar estes Termos de Uso, você concorda e autoriza expressamente que a clínica utilize suas informações pessoais, incluindo o número de telefone fornecido no cadastro, para fins de contato e prestação de serviços, conforme previsto em nossa Política de Privacidade. Seus dados serão tratados com segurança e confidencialidade, em conformidade com a Lei nº 13.709/2018 (LGPD). Você pode, a qualquer momento, revogar esta autorização ou solicitar mais informações sobre o tratamento dos seus dados através dos canais de atendimento.">
+                    Li e aceito os <a asp-controller="Home" asp-action="TermosDeUso" target="_blank">Termos de Uso</a> e <a asp-controller="Home" asp-action="PoliticaPrivacidade" target="_blank">Política de Privacidade</a>.
                 </label>
-                 <div class="invalid-feedback">Você deve aceitar os termos e condições.</div>
+                <div class="invalid-feedback">Você deve aceitar os termos e condições.</div>
             </div>
 
             <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Cadastrar e Ganhar Aula Experimental</button>
         </form>
 
         <div class="text-center mt-4">
-            <p class="text-muted small">Já tem uma conta? <a asp-controller="Conta" asp-action="Login" style="color: var(--primary-color); font-weight: 500;">Faça Login</a></p>
+            <p class="text-muted small">Já tem uma conta? <a asp-controller="Conta" asp-action="Login">Faça Login</a></p>
         </div>
     </div>
 </div>
 
-@if (TempData["CadastroSucesso"] != null)
+@if (TempData["CadastroSucesso"] != null && (bool)TempData["CadastroSucesso"])
 {
 <div class="modal fade" id="popupMensagemCadastro" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content modal-content-custom p-4">
-            <div class="modal-header border-0">
+        <div class="modal-content modal-content-custom p-3">
+            <div class="modal-header">
+                 <h5 class="modal-title w-100 text-center" id="popupLabel" style="color: var(--primary-color); font-weight:600;">🎉 Parabéns!</h5>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div style="font-size: 3rem; color: var(--primary-color); margin-bottom:15px;"><i class="fas fa-party-horn"></i></div>
-                <h4 style="color: var(--primary-color); font-weight:600;">Parabéns!</h4>
+            <div class="modal-body py-4">
                 <p>Seu cadastro foi realizado com sucesso!</p>
-                <p>Ao realizar o cadastro, você acaba de ganhar uma aula experimental gratuita! <i class="fas fa-gift"></i></p>
-                <p>Nossa equipe entrará em contato com você em breve para confirmar os detalhes. <i class="fas fa-hourglass-half"></i></p>
-                <p>Agradecemos pela sua confiança e estamos ansiosos para te receber! 😊</p>
+                <p>Você acaba de ganhar uma <strong>aula experimental gratuita!</strong> <i class="fas fa-gift" style="color:var(--primary-color);"></i></p>
+                <p class="small mt-3">Nossa equipe entrará em contato com você em breve para confirmar os detalhes. <i class="fas fa-hourglass-half" style="color:var(--primary-color);"></i></p>
+                <p class="small">Agradecemos pela sua confiança e estamos ansiosos para te receber! 😊</p>
             </div>
-            <div class="modal-footer border-0 justify-content-center">
+            <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido!</button>
             </div>
         </div>
     </div>
 </div>
 }
-
+@* MARCOS PAULO CALERA *@
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var termosLabel = document.querySelector('.form-check-label[for="termos"]');
-            if (termosLabel) {
-                new bootstrap.Tooltip(termosLabel);
-            }
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
 
             var modalElement = document.getElementById('popupMensagemCadastro');
-            if (modalElement) {
+            if (modalElement && '@(TempData["CadastroSucesso"] != null && (bool)TempData["CadastroSucesso"])' === 'True') {
                 var myModal = new bootstrap.Modal(modalElement);
                 myModal.show();
-                @if (TempData["CadastroSucesso"] != null) {
-                    TempData.Remove("CadastroSucesso");
-                }
             }
         });
 
         (function () {
             'use strict'
-            var forms = document.querySelectorAll('form')
+            var forms = document.querySelectorAll('.needs-validation')
             Array.prototype.slice.call(forms)
                 .forEach(function (form) {
                     form.addEventListener('submit', function (event) {
@@ -201,6 +129,6 @@
                         form.classList.add('was-validated')
                     }, false)
                 })
-        })()
+        })();
     </script>
 }

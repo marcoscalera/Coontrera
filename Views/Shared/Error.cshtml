@@ -4,58 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section Styles {
-    <style>
-        .error-page-container {
-            min-height: calc(100vh - 200px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 15px;
-        }
-
-        .error-page-container .icon-error {
-            font-size: 5rem;
-            color: var(--danger-color, #dc3545);
-            margin-bottom: 20px;
-        }
-
-        .error-page-container h1.error-title {
-            font-family: var(--font-headings);
-            color: var(--primary-color);
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-
-        .error-page-container p.error-message {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin-bottom: 25px;
-        }
-
-        .error-page-container .request-id-info {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-top: 30px;
-        }
-        .error-page-container .request-id-info code {
-            background-color: var(--light-gray);
-            padding: 3px 6px;
-            border-radius: 4px;
-            color: var(--text-dark);
-        }
-    </style>
-}
-
-<div class="error-page-container" data-aos="fade-up">
-    <div class="icon-error">
+<div class="status-page-container" data-aos="fade-up">
+    <div class="icon-status icon-error">
         <i class="fas fa-exclamation-triangle"></i>
     </div>
-    <h1 class="error-title">@ViewData["Title"]</h1>
-    <p class="error-message">
+    <h1 class="title-status">@ViewData["Title"]</h1>
+    <p class="message-status">
         Lamentamos, mas algo deu errado ao processar sua solicitação. Nossa equipe já foi notificada.
         Por favor, tente novamente mais tarde ou retorne à página inicial.
     </p>
@@ -65,7 +19,7 @@
         <p class="request-id-info">
             <strong>ID da Solicitação:</strong> <code>@Model.RequestId</code>
             <br>
-            Esta informação pode ser útil para nossa equipe técnica identificar o problema.
+            Esta informação pode ser útil para nossa equipe técnica.
         </p>
     }
 
@@ -77,15 +31,5 @@
             <i class="fas fa-envelope me-2"></i> Entrar em Contato
         </a>
     </div>
-</div>
-
-@section Scripts {
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 600,
-            once: true
-        });
-    </script>
-}
+</div>   
+@* MARCOS PAULO CALERA *@

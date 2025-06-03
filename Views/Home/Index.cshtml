@@ -1,192 +1,79 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Bem-vindo à Coontrera";
-}
-
-@section Styles {
-    <style>
-        .hero-section {
-            background: linear-gradient(135deg, rgba(122, 79, 155, 0.85), rgba(74, 21, 75, 0.95)), url('/images/hero-background.jpg'); /* Substitua com uma imagem de fundo de alta qualidade */
-
-            background-size: cover;
-            background-position: center center;
-            padding: 120px 0;
-            color: var(--white);
-            text-align: center;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-section h1 {
-            font-family: var(--font-headings);
-            font-size: 3.8rem; /* */
-            font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-            margin-bottom: 1.5rem;
-            color: var(--white); 
-        }
-
-        .hero-section .lead {
-            font-size: 1.3rem; /* */
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-        .hero-section .btn-cta-hero {
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            border: none;
-        }
-        .hero-section .btn-cta-hero:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-        }
-
-        .section-title {
-            font-family: var(--font-headings);
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .service-highlight-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 8px 25px rgba(122, 79, 155, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            margin-bottom: 30px;
-            height: 100%; 
-        }
-        .service-highlight-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 35px rgba(122, 79, 155, 0.18);
-        }
-        .service-highlight-card .icon {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            line-height:1;
-        }
-        .service-highlight-card h3 {
-            font-family: var(--font-primary); 
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        .service-highlight-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .cta-banner-section {
-            background-color: var(--accent-color);
-            padding: 80px 0;
-            text-align: center;
-        }
-        .cta-banner-section h2 {
-             font-family: var(--font-primary);
-             font-weight: 600;
-             color: var(--primary-color);
-        }
-         .cta-banner-section p {
-             color: var(--text-dark);
-         }
-    </style>
+    ViewData["ActivePage"] = "Home"; // Para a navbar
 }
 
 <section class="hero-section">
-    <div class="container">
-        <h1 data-aos="fade-up">Movimento é Vida.<br>Descubra a Sua Melhor Versão.</h1>
-        <p class="lead" data-aos="fade-up" data-aos-delay="200">
+    <div class="container text-center">
+        <h1 class="hero-title" data-aos="fade-up">Movimento é Vida.<br>Descubra a Sua Melhor Versão.</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="150">
             Na Coontrera, combinamos a arte do Pilates e a ciência da Fisioterapia para oferecer a você uma jornada única de saúde, bem-estar e recuperação.
         </p>
-        <div data-aos="fade-up" data-aos-delay="400">
-            <a asp-controller="Home" asp-action="Servicos" class="btn btn-cta-hero">Conheça Nossos Tratamentos</a>
+        <div data-aos="fade-up" data-aos-delay="300">
+            <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20minha%20aula%20experimental." target="_blank" class="btn btn-cta-hero btn-lg">
+                <i class="fab fa-whatsapp me-2"></i>Agende sua Aula Experimental
+            </a>
         </div>
     </div>
 </section>
 
-<section class="services-overview-section py-5">
-    <div class="container text-center py-5">
-        <h2 class="section-title">Serviços Pensados para Você</h2>
-        <p class="section-subtitle">
+<section class="services-overview-section page-section">
+    <div class="container">
+        <h2 class="section-title-global" data-aos="fade-up">Serviços Pensados para Você</h2>
+        <p class="section-subtitle-global" data-aos="fade-up" data-aos-delay="100">
             Oferecemos uma gama completa de terapias para atender suas necessidades individuais, desde a reabilitação até a busca por uma vida mais ativa e equilibrada.
         </p>
-        <div class="row">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                <div class="service-highlight-card">
-                    <div class="icon"><i class="fas fa-spa"></i></div> <h3>Pilates Terapêutico</h3>
-                    <p>Fortaleça seu corpo, melhore a postura e alivie dores com o método Pilates adaptado às suas necessidades.</p>
+        <div class="row gy-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="service-highlight-card card">
+                    <div class="card-body">
+                        <div class="icon"><i class="fas fa-spa"></i></div>
+                        <h3 class="card-title">Pilates Terapêutico</h3>
+                        <p>Fortaleça seu corpo, melhore a postura e alivie dores com o método Pilates adaptado às suas necessidades.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-highlight-card">
-                     <div class="icon"><i class="fas fa-running"></i></div>
-                    <h3>Fisioterapia Especializada</h3>
-                    <p>Recupere-se de lesões e cirurgias com tratamentos fisioterapêuticos avançados e personalizados.</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="service-highlight-card card">
+                     <div class="card-body">
+                        <div class="icon"><i class="fas fa-running"></i></div>
+                        <h3 class="card-title">Fisioterapia Especializada</h3>
+                        <p>Recupere-se de lesões e cirurgias com tratamentos fisioterapêuticos avançados e personalizados.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-highlight-card">
-                    <div class="icon"><i class="fas fa-bone"></i></div>
-                    <h3>Quiropraxia Clínica</h3>
-                    <p>Alinhe sua coluna, alivie tensões e promova o bem-estar geral através de ajustes quiropráticos precisos.</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+                <div class="service-highlight-card card">
+                    <div class="card-body">
+                        <div class="icon"><i class="fas fa-bone"></i></div>
+                        <h3 class="card-title">Quiropraxia Clínica</h3>
+                        <p>Alinhe sua coluna, alivie tensões e promova o bem-estar geral através de ajustes quiropráticos precisos.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                 <div class="service-highlight-card">
-                     <div class="icon"><i class="fas fa-tint"></i></div>
-                    <h3>Hidroterapia</h3>
-                    <p>Reabilitação suave e eficaz na água, ideal para todas as idades e condições físicas, promovendo alívio e fortalecimento.</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="450">
+                 <div class="service-highlight-card card">
+                     <div class="card-body">
+                        <div class="icon"><i class="fas fa-tint"></i></div>
+                        <h3 class="card-title">Hidroterapia</h3>
+                        <p>Reabilitação suave e eficaz na água, ideal para todas as idades e condições físicas, promovendo alívio.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="mt-5">
+        <div class="text-center mt-5" data-aos="fade-up">
             <a asp-controller="Home" asp-action="Servicos" class="btn btn-outline-primary btn-lg">Ver Todos os Serviços</a>
         </div>
     </div>
 </section>
-
-<section class="cta-banner-section">
-    <div class="container" data-aos="fade-up">
+@* MARCOS PAULO CALERA *@
+<section class="cta-banner-section page-section">
+    <div class="container text-center" data-aos="fade-up">
         <h2 class="display-5 mb-3">Pronto para Transformar sua Saúde?</h2>
         <p class="lead mb-4">Agende sua aula experimental gratuita ou uma avaliação e dê o primeiro passo rumo a uma vida com mais qualidade e menos dor.</p>
-        <a href="https://api.whatsapp.com/send?phone=5516994593131" target="_blank" class="btn btn-primary btn-lg">
+        <a href="https://api.whatsapp.com/send?phone=5516994593131&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20ou%20aula%20experimental." target="_blank" class="btn btn-primary btn-lg">
             <i class="fab fa-whatsapp me-2"></i>Agendar via WhatsApp
         </a>
     </div>
 </section>
-
-@section Scripts {
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800, 
-            once: true 
-        });
-    </script>
-}
