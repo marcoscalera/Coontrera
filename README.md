@@ -62,5 +62,3 @@ O sistema foi construído com foco em uma interface de usuário moderna, respons
     * Visual Studio / VS Code
     * Git / GitHub
     * Swagger (para documentação da API)
-
-## Estrutura do Projeto (Simplificada)
