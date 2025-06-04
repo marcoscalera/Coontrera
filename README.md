@@ -43,7 +43,7 @@ O sistema foi construído com foco em uma interface de usuário moderna, respons
 * **Backend:**
     * ASP.NET Core MVC / Razor Pages (C#)
     * Entity Framework Core (para interação com o banco de dados)
-    * SQL Server (ou outro banco de dados relacional configurado)
+    * SQL Server 
     * Autenticação por Cookies (para MVC)
     * Autenticação JWT (para API)
     * Injeção de Dependência
