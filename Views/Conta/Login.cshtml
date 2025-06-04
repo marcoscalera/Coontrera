@@ -14,7 +14,7 @@
 
         <h2 class="form-title">@ViewData["Title"]</h2>
         <p class="form-subtitle">Bem-vindo(a) de volta! Faça login para continuar.</p>
-
+        @* MARCOS PAULO CALERA *@
         @if (!string.IsNullOrEmpty(ViewBag.Erro))
         {
             <div class="alert alert-danger d-flex align-items-center mb-3" role="alert">
@@ -48,15 +48,17 @@
             </div>
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="password" id="senha" name="senha" class="form-control" placeholder="Sua senha" required>
-                <div class="invalid-feedback">Por favor, insira sua senha.</div>
+                <div class="input-group">
+                    <input type="password" id="senha" name="senha" class="form-control" placeholder="Sua senha" required>
+                    <button class="btn btn-outline-secondary" type="button" id="toggleSenhaLogin">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <div class="invalid-feedback">Por favor, insira sua senha.</div>
+                </div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center mb-4 extra-links">
-                <div class="form-check">
-                    @* <input class="form-check-input" type="checkbox" value="" id="rememberMe" name="rememberMe"> *@
-                    @* <label class="form-check-label" for="rememberMe">Lembrar de mim</label> *@
-                </div>
+                <div></div>
                 <a asp-controller="Conta" asp-action="NovaSenha">Esqueceu a senha?</a>
             </div>
 
@@ -68,7 +70,7 @@
         </div>
     </div>
 </div>
-
+@* MARCOS PAULO CALERA *@
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script>
@@ -86,5 +88,17 @@
                     }, false)
                 })
         })();
+        // script para mostrar/ocultar senha no Login
+        const toggleSenhaLogin = document.querySelector('#toggleSenhaLogin');
+        const senhaLoginInput = document.querySelector('#senha');
+
+        if (toggleSenhaLogin && senhaLoginInput) {
+            toggleSenhaLogin.addEventListener('click', function () {
+                const type = senhaLoginInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                senhaLoginInput.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
     </script>
-}@* MARCOS PAULO CALERA *@
+}

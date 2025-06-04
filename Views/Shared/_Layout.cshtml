@@ -61,7 +61,7 @@
                         <li class="nav-item ms-lg-3">
                              <a class="btn btn-primary btn-sm px-4 py-2 @(ViewData["ActivePage"]?.ToString() == "Login" ? "active-btn" : "")" asp-controller="Conta" asp-action="Login">Entrar</a>
                         </li>
-                    }
+                    }@* MARCOS PAULO CALERA *@
                 </ul>
             </div>
         </div>
@@ -110,7 +110,7 @@
         AOS.init({
             duration: 700,
             once: true,
-            offset: 50 // Inicia animação um pouco antes do elemento entrar na tela
+            offset: 50 // inicia animação um pouco antes do elemento entrar na tela
         });
     </script>
     @await RenderSectionAsync("Scripts", required: false)
