@@ -249,7 +249,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "http",
-        "description": "Digite: Bearer + espaço + seu token JWT",
+        "description": "Digite: Seu Token JWT",
         "scheme": "Bearer",
         "bearerFormat": "JWT"
       }
