@@ -778,6 +778,15 @@ a:hover {
     .admin-page-title {
         font-size: 1.8rem;
     }
+     .navbar-custom .nav-item.login-button-item {
+        padding-left: 1rem; 
+        padding-top: 0.5rem;    
+        padding-bottom: 0.5rem;
+    }
+    .navbar-custom .nav-item.login-button-item a.btn {
+        display: inline-block;
+        width: auto;
+    }
 }
 
 @media (max-width: 767.98px) { /* Celulares em paisagem e tablets menores */
