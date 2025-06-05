@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "b6DguZOMhDyzCIIDhq3Ank38XLh8B9AaXiXYnPuKNM4=",
+  "Hash": "zkyoGennvOCupkTDkt1g1j+PR9vHFmV3SlofNXaPcp8=",
   "Source": "Coontrera",
   "BasePath": "_content/Coontrera",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rez4tcgh4o",
-      "Integrity": "vUauB8/ynhq/Cs23HKDs+YUtxKPrFFUaHgGtCthTYx4=",
+      "Fingerprint": "c42e8vwgyw",
+      "Integrity": "PObInnzW+kZNq9FhZIup3UE0SpfCN71wlGBjysiqdT8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
@@ -2199,6 +2199,51 @@
       ]
     },
     {
+      "Route": "css/styles.c42e8vwgyw.css",
+      "AssetFile": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22794"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PObInnzW+kZNq9FhZIup3UE0SpfCN71wlGBjysiqdT8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Jun 2025 11:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c42e8vwgyw"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PObInnzW+kZNq9FhZIup3UE0SpfCN71wlGBjysiqdT8="
+        }
+      ]
+    },
+    {
       "Route": "css/styles.css",
       "AssetFile": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\css\\styles.css",
       "Selectors": [],
@@ -2209,7 +2254,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22522"
+          "Value": "22794"
         },
         {
           "Name": "Content-Type",
@@ -2217,11 +2262,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vUauB8/ynhq/Cs23HKDs+YUtxKPrFFUaHgGtCthTYx4=\""
+          "Value": "\"PObInnzW+kZNq9FhZIup3UE0SpfCN71wlGBjysiqdT8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 00:06:54 GMT"
+          "Value": "Thu, 05 Jun 2025 11:44:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2231,52 +2276,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vUauB8/ynhq/Cs23HKDs+YUtxKPrFFUaHgGtCthTYx4="
-        }
-      ]
-    },
-    {
-      "Route": "css/styles.rez4tcgh4o.css",
-      "AssetFile": "C:\\Users\\Marcos Paulo Calera\\source\\repos\\Coontrera\\wwwroot\\css\\styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22522"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vUauB8/ynhq/Cs23HKDs+YUtxKPrFFUaHgGtCthTYx4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 00:06:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "rez4tcgh4o"
-        },
-        {
-          "Name": "label",
-          "Value": "css/styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vUauB8/ynhq/Cs23HKDs+YUtxKPrFFUaHgGtCthTYx4="
+          "Value": "sha256-PObInnzW+kZNq9FhZIup3UE0SpfCN71wlGBjysiqdT8="
         }
       ]
     },
