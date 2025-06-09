@@ -5,7 +5,7 @@ namespace Coontrera.Models.DTOs
     public class UsuarioDTO
     {
         [Required(ErrorMessage = "O nome é obrigatório.")]
-        [MaxLength(100, ErrorMessage = "O nome deve ter no máximo 100 caracteres.")]
+        [MaxLength(24, ErrorMessage = "O nome deve ter no máximo 24 caracteres.")]
         [RegularExpression(@"^[a-zA-Z\sÀ-ÖØ-öø-ÿ'-]+$", ErrorMessage = "O nome deve conter apenas letras, espaços, apóstrofos ou hífens.")]
         public string Nome { get; set; } = string.Empty;
 
