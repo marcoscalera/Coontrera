@@ -4,7 +4,8 @@ namespace Coontrera.Models.DTOs
 {
     public class UsuarioUpdateDTO
     {
-        [Required(ErrorMessage = "O nome é obrigatório."), MaxLength(100)]
+        [Required(ErrorMessage = "O nome é obrigatório.")]
+        [MaxLength(24, ErrorMessage = "O nome deve ter no máximo 24 caracteres.")]
         public string Nome { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "O telefone é obrigatório.")]
