@@ -11,6 +11,7 @@ namespace Coontrera.Models
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
         [MaxLength(24, ErrorMessage = "O nome deve ter no máximo 24 caracteres.")]
+        [RegularExpression(@"^[A-Za-zÀ-ÿ\s]+$", ErrorMessage = "O nome deve conter apenas letras.")]
         public string Nome { get; set; } = string.Empty;
 
         [Required, MaxLength(100), EmailAddress]
